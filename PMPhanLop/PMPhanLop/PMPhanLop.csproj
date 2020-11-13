@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A24EE548-1FA5-4601-A025-0B62BFB59D24}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PMPhanLop</RootNamespace>
+    <AssemblyName>PMPhanLop</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BUS\ChitietDoanBUS.cs" />
+    <Compile Include="BUS\DoanBUS.cs" />
+    <Compile Include="BUS\GiaTourBUS.cs" />
+    <Compile Include="BUS\KhachBUS.cs" />
+    <Compile Include="BUS\TourBUS.cs" />
+    <Compile Include="chiphi.cs">
+      <DependentUpon>TourModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="chitietdoan.cs">
+      <DependentUpon>TourModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\ChitietDoanDAO.cs" />
+    <Compile Include="DAO\DoanDAO.cs" />
+    <Compile Include="DAO\GiaTourDAO.cs" />
+    <Compile Include="DAO\KhachDAO.cs" />
+    <Compile Include="DAO\TourDAO.cs" />
+    <Compile Include="diadiem.cs">
+      <DependentUpon>TourModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doan.cs">
+      <DependentUpon>TourModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\add_ctdoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\add_ctdoan.Designer.cs">
+      <DependentUpon>add_ctdoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\add_doan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\add_doan.Designer.cs">
+      <DependentUpon>add_doan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\add_gia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\add_gia.Designer.cs">
+      <DependentUpon>add_gia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\add_khach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\add_khach.Designer.cs">
+      <DependentUpon>add_khach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\add_tour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\add_tour.Designer.cs">
+      <DependentUpon>add_tour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\bangGiaTour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\bangGiaTour.Designer.cs">
+      <DependentUpon>bangGiaTour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ChitietDoanGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ChitietDoanGUI.Designer.cs">
+      <DependentUpon>ChitietDoanGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\DoanGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DoanGUI.Designer.cs">
+      <DependentUpon>DoanGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\edit_doan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\edit_doan.Designer.cs">
+      <DependentUpon>edit_doan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\edit_gia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\edit_gia.Designer.cs">
+      <DependentUpon>edit_gia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\edit_khach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\edit_khach.Designer.cs">
+      <DependentUpon>edit_khach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\edit_tour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\edit_tour.Designer.cs">
+      <DependentUpon>edit_tour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\khachGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\khachGUI.Designer.cs">
+      <DependentUpon>khachGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="main.Designer.cs">
+      <DependentUpon>main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gia.cs">
+      <DependentUpon>TourModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\TourGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\TourGUI.Designer.cs">
+      <DependentUpon>TourGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="khach.cs">
+      <DependentUpon>TourModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="loaichiphi.cs">
+      <DependentUpon>TourModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="loaidulich.cs">
+      <DependentUpon>TourModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="nhanvien.cs">
+      <DependentUpon>TourModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="phancong.cs">
+      <DependentUpon>TourModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>TourModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tour.cs">
+      <DependentUpon>TourModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TourModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TourModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TourModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TourModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TourModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TourModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="tour_diadiem.cs">
+      <DependentUpon>TourModel.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="GUI\add_ctdoan.resx">
+      <DependentUpon>add_ctdoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\add_doan.resx">
+      <DependentUpon>add_doan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\add_khach.resx">
+      <DependentUpon>add_khach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\add_tour.resx">
+      <DependentUpon>add_tour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\bangGiaTour.resx">
+      <DependentUpon>bangGiaTour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ChitietDoanGUI.resx">
+      <DependentUpon>ChitietDoanGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DoanGUI.resx">
+      <DependentUpon>DoanGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\edit_doan.resx">
+      <DependentUpon>edit_doan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\edit_khach.resx">
+      <DependentUpon>edit_khach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\edit_tour.resx">
+      <DependentUpon>edit_tour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\khachGUI.resx">
+      <DependentUpon>khachGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\TourGUI.resx">
+      <DependentUpon>TourGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main.resx">
+      <DependentUpon>main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EntityDeploy Include="TourModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TourModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="TourModel.edmx.diagram">
+      <DependentUpon>TourModel.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TourModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TourModel.edmx</DependentUpon>
+      <LastGenOutput>TourModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="TourModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TourModel.edmx</DependentUpon>
+      <LastGenOutput>TourModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

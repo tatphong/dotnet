@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="83cfaf706d914a8baa46a491cc70dfc8" Name="Diagram1">
+        <EntityTypeShape EntityType="PMPhanLopModel.chiphi" Width="1.5" PointX="7.5" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMPhanLopModel.chitietdoan" Width="1.5" PointX="7.5" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMPhanLopModel.diadiem" Width="1.5" PointX="6" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMPhanLopModel.doan" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMPhanLopModel.gia" Width="1.5" PointX="5.25" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMPhanLopModel.khach" Width="1.5" PointX="5.25" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMPhanLopModel.loaichiphi" Width="1.5" PointX="5.25" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMPhanLopModel.loaidulich" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMPhanLopModel.nhanvien" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMPhanLopModel.phancong" Width="1.5" PointX="10.5" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMPhanLopModel.sysdiagram" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMPhanLopModel.tour" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMPhanLopModel.tour_diadiem" Width="1.5" PointX="8.25" PointY="10" IsExpanded="true" />
+        <AssociationConnector Association="PMPhanLopModel.FK__chiphi__iddoan__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="PMPhanLopModel.FK__chiphi__idloaicp__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="PMPhanLopModel.FK__chitietdo__iddoa__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="PMPhanLopModel.FK__chitietdo__idkha__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="PMPhanLopModel.FK__tour_diad__iddia__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="PMPhanLopModel.FK__doan__idtour__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="PMPhanLopModel.FK__phancong__iddoan__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="PMPhanLopModel.FK__gia__idtour__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="PMPhanLopModel.FK__tour__idloaidl__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="PMPhanLopModel.FK__phancong__idnhan__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="PMPhanLopModel.FK__tour_diad__idtou__403A8C7D" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

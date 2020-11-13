@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PMPhanLopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="chiphi">
+    <Key>
+      <PropertyRef Name="idchiphi" />
+    </Key>
+    <Property Name="idchiphi" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idloaicp" Type="Int32" />
+    <Property Name="iddoan" Type="Int32" />
+    <Property Name="tongtien" Type="Int32" />
+    <Property Name="ghichu" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="doan" Relationship="Self.FK__chiphi__iddoan__4F7CD00D" FromRole="chiphi" ToRole="doan" />
+    <NavigationProperty Name="loaichiphi" Relationship="Self.FK__chiphi__idloaicp__4E88ABD4" FromRole="chiphi" ToRole="loaichiphi" />
+  </EntityType>
+  <EntityType Name="chitietdoan">
+    <Key>
+      <PropertyRef Name="idchitietdoan" />
+    </Key>
+    <Property Name="idchitietdoan" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idkhach" Type="Int32" />
+    <Property Name="iddoan" Type="Int32" />
+    <NavigationProperty Name="doan" Relationship="Self.FK__chitietdo__iddoa__49C3F6B7" FromRole="chitietdoan" ToRole="doan" />
+    <NavigationProperty Name="khach" Relationship="Self.FK__chitietdo__idkha__48CFD27E" FromRole="chitietdoan" ToRole="khach" />
+  </EntityType>
+  <EntityType Name="diadiem">
+    <Key>
+      <PropertyRef Name="iddiadiem" />
+    </Key>
+    <Property Name="iddiadiem" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tendiadiem" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tour_diadiem" Relationship="Self.FK__tour_diad__iddia__412EB0B6" FromRole="diadiem" ToRole="tour_diadiem" />
+  </EntityType>
+  <EntityType Name="doan">
+    <Key>
+      <PropertyRef Name="iddoan" />
+    </Key>
+    <Property Name="iddoan" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idtour" Type="Int32" />
+    <Property Name="tendoan" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ngaykhoihanh" Type="DateTime" Precision="3" />
+    <Property Name="ngayketthuc" Type="DateTime" Precision="3" />
+    <Property Name="tongchiphi" Type="Int32" />
+    <NavigationProperty Name="chiphis" Relationship="Self.FK__chiphi__iddoan__4F7CD00D" FromRole="doan" ToRole="chiphi" />
+    <NavigationProperty Name="chitietdoans" Relationship="Self.FK__chitietdo__iddoa__49C3F6B7" FromRole="doan" ToRole="chitietdoan" />
+    <NavigationProperty Name="tour" Relationship="Self.FK__doan__idtour__45F365D3" FromRole="doan" ToRole="tour" />
+    <NavigationProperty Name="phancongs" Relationship="Self.FK__phancong__iddoan__5441852A" FromRole="doan" ToRole="phancong" />
+  </EntityType>
+  <EntityType Name="gia">
+    <Key>
+      <PropertyRef Name="idgia" />
+    </Key>
+    <Property Name="idgia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idtour" Type="Int32" />
+    <Property Name="giatour" Type="Int32" />
+    <Property Name="ngaybatdau" Type="DateTime" Precision="0" />
+    <Property Name="ngayketthuc" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="tour" Relationship="Self.FK__gia__idtour__3B75D760" FromRole="gia" ToRole="tour" />
+  </EntityType>
+  <EntityType Name="khach">
+    <Key>
+      <PropertyRef Name="idkhach" />
+    </Key>
+    <Property Name="idkhach" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hoten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="chitietdoans" Relationship="Self.FK__chitietdo__idkha__48CFD27E" FromRole="khach" ToRole="chitietdoan" />
+    <Property Name="cmnd" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="gioitinh" Type="Boolean" />
+    <Property Name="sodt" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="diachi" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="loaichiphi">
+    <Key>
+      <PropertyRef Name="idloaicp" />
+    </Key>
+    <Property Name="idloaicp" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tenloaicp" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="chiphis" Relationship="Self.FK__chiphi__idloaicp__4E88ABD4" FromRole="loaichiphi" ToRole="chiphi" />
+  </EntityType>
+  <EntityType Name="loaidulich">
+    <Key>
+      <PropertyRef Name="idloaidl" />
+    </Key>
+    <Property Name="idloaidl" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tenloaidl" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tours" Relationship="Self.FK__tour__idloaidl__38996AB5" FromRole="loaidulich" ToRole="tour" />
+  </EntityType>
+  <EntityType Name="nhanvien">
+    <Key>
+      <PropertyRef Name="idnhanvien" />
+    </Key>
+    <Property Name="idnhanvien" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotennv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="phancongs" Relationship="Self.FK__phancong__idnhan__5535A963" FromRole="nhanvien" ToRole="phancong" />
+  </EntityType>
+  <EntityType Name="phancong">
+    <Key>
+      <PropertyRef Name="idphancong" />
+    </Key>
+    <Property Name="idphancong" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="iddoan" Type="Int32" />
+    <Property Name="idnhanvien" Type="Int32" />
+    <Property Name="chucvu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ghichu" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="doan" Relationship="Self.FK__phancong__iddoan__5441852A" FromRole="phancong" ToRole="doan" />
+    <NavigationProperty Name="nhanvien" Relationship="Self.FK__phancong__idnhan__5535A963" FromRole="phancong" ToRole="nhanvien" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tour">
+    <Key>
+      <PropertyRef Name="idtour" />
+    </Key>
+    <Property Name="idtour" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idloaidl" Type="Int32" />
+    <Property Name="tentour" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="thoigiantour" Type="Int32" />
+    <NavigationProperty Name="doans" Relationship="Self.FK__doan__idtour__45F365D3" FromRole="tour" ToRole="doan" />
+    <NavigationProperty Name="gias" Relationship="Self.FK__gia__idtour__3B75D760" FromRole="tour" ToRole="gia" />
+    <NavigationProperty Name="loaidulich" Relationship="Self.FK__tour__idloaidl__38996AB5" FromRole="tour" ToRole="loaidulich" />
+    <NavigationProperty Name="tour_diadiem" Relationship="Self.FK__tour_diad__idtou__403A8C7D" FromRole="tour" ToRole="tour_diadiem" />
+  </EntityType>
+  <EntityType Name="tour_diadiem">
+    <Key>
+      <PropertyRef Name="idtour_diadiem" />
+    </Key>
+    <Property Name="idtour_diadiem" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idtour" Type="Int32" />
+    <Property Name="iddiadiem" Type="Int32" />
+    <NavigationProperty Name="diadiem" Relationship="Self.FK__tour_diad__iddia__412EB0B6" FromRole="tour_diadiem" ToRole="diadiem" />
+    <NavigationProperty Name="tour" Relationship="Self.FK__tour_diad__idtou__403A8C7D" FromRole="tour_diadiem" ToRole="tour" />
+  </EntityType>
+  <Association Name="FK__chiphi__iddoan__4F7CD00D">
+    <End Role="doan" Type="Self.doan" Multiplicity="0..1" />
+    <End Role="chiphi" Type="Self.chiphi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="doan">
+        <PropertyRef Name="iddoan" />
+      </Principal>
+      <Dependent Role="chiphi">
+        <PropertyRef Name="iddoan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__chiphi__idloaicp__4E88ABD4">
+    <End Role="loaichiphi" Type="Self.loaichiphi" Multiplicity="0..1" />
+    <End Role="chiphi" Type="Self.chiphi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="loaichiphi">
+        <PropertyRef Name="idloaicp" />
+      </Principal>
+      <Dependent Role="chiphi">
+        <PropertyRef Name="idloaicp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__chitietdo__iddoa__49C3F6B7">
+    <End Role="doan" Type="Self.doan" Multiplicity="0..1" />
+    <End Role="chitietdoan" Type="Self.chitietdoan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="doan">
+        <PropertyRef Name="iddoan" />
+      </Principal>
+      <Dependent Role="chitietdoan">
+        <PropertyRef Name="iddoan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__chitietdo__idkha__48CFD27E">
+    <End Role="khach" Type="Self.khach" Multiplicity="0..1" />
+    <End Role="chitietdoan" Type="Self.chitietdoan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="khach">
+        <PropertyRef Name="idkhach" />
+      </Principal>
+      <Dependent Role="chitietdoan">
+        <PropertyRef Name="idkhach" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tour_diad__iddia__412EB0B6">
+    <End Role="diadiem" Type="Self.diadiem" Multiplicity="0..1" />
+    <End Role="tour_diadiem" Type="Self.tour_diadiem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="diadiem">
+        <PropertyRef Name="iddiadiem" />
+      </Principal>
+      <Dependent Role="tour_diadiem">
+        <PropertyRef Name="iddiadiem" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__doan__idtour__45F365D3">
+    <End Role="tour" Type="Self.tour" Multiplicity="0..1" />
+    <End Role="doan" Type="Self.doan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tour">
+        <PropertyRef Name="idtour" />
+      </Principal>
+      <Dependent Role="doan">
+        <PropertyRef Name="idtour" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__phancong__iddoan__5441852A">
+    <End Role="doan" Type="Self.doan" Multiplicity="0..1" />
+    <End Role="phancong" Type="Self.phancong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="doan">
+        <PropertyRef Name="iddoan" />
+      </Principal>
+      <Dependent Role="phancong">
+        <PropertyRef Name="iddoan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__gia__idtour__3B75D760">
+    <End Role="tour" Type="Self.tour" Multiplicity="0..1" />
+    <End Role="gia" Type="Self.gia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tour">
+        <PropertyRef Name="idtour" />
+      </Principal>
+      <Dependent Role="gia">
+        <PropertyRef Name="idtour" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tour__idloaidl__38996AB5">
+    <End Role="loaidulich" Type="Self.loaidulich" Multiplicity="0..1" />
+    <End Role="tour" Type="Self.tour" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="loaidulich">
+        <PropertyRef Name="idloaidl" />
+      </Principal>
+      <Dependent Role="tour">
+        <PropertyRef Name="idloaidl" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__phancong__idnhan__5535A963">
+    <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="0..1" />
+    <End Role="phancong" Type="Self.phancong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="nhanvien">
+        <PropertyRef Name="idnhanvien" />
+      </Principal>
+      <Dependent Role="phancong">
+        <PropertyRef Name="idnhanvien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tour_diad__idtou__403A8C7D">
+    <End Role="tour" Type="Self.tour" Multiplicity="0..1" />
+    <End Role="tour_diadiem" Type="Self.tour_diadiem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tour">
+        <PropertyRef Name="idtour" />
+      </Principal>
+      <Dependent Role="tour_diadiem">
+        <PropertyRef Name="idtour" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PMPhanLopEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="chiphis" EntityType="Self.chiphi" />
+    <EntitySet Name="chitietdoans" EntityType="Self.chitietdoan" />
+    <EntitySet Name="diadiems" EntityType="Self.diadiem" />
+    <EntitySet Name="doans" EntityType="Self.doan" />
+    <EntitySet Name="gias" EntityType="Self.gia" />
+    <EntitySet Name="khaches" EntityType="Self.khach" />
+    <EntitySet Name="loaichiphis" EntityType="Self.loaichiphi" />
+    <EntitySet Name="loaiduliches" EntityType="Self.loaidulich" />
+    <EntitySet Name="nhanviens" EntityType="Self.nhanvien" />
+    <EntitySet Name="phancongs" EntityType="Self.phancong" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="tours" EntityType="Self.tour" />
+    <EntitySet Name="tour_diadiem" EntityType="Self.tour_diadiem" />
+    <AssociationSet Name="FK__chiphi__iddoan__4F7CD00D" Association="Self.FK__chiphi__iddoan__4F7CD00D">
+      <End Role="doan" EntitySet="doans" />
+      <End Role="chiphi" EntitySet="chiphis" />
+    </AssociationSet>
+    <AssociationSet Name="FK__chiphi__idloaicp__4E88ABD4" Association="Self.FK__chiphi__idloaicp__4E88ABD4">
+      <End Role="loaichiphi" EntitySet="loaichiphis" />
+      <End Role="chiphi" EntitySet="chiphis" />
+    </AssociationSet>
+    <AssociationSet Name="FK__chitietdo__iddoa__49C3F6B7" Association="Self.FK__chitietdo__iddoa__49C3F6B7">
+      <End Role="doan" EntitySet="doans" />
+      <End Role="chitietdoan" EntitySet="chitietdoans" />
+    </AssociationSet>
+    <AssociationSet Name="FK__chitietdo__idkha__48CFD27E" Association="Self.FK__chitietdo__idkha__48CFD27E">
+      <End Role="khach" EntitySet="khaches" />
+      <End Role="chitietdoan" EntitySet="chitietdoans" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tour_diad__iddia__412EB0B6" Association="Self.FK__tour_diad__iddia__412EB0B6">
+      <End Role="diadiem" EntitySet="diadiems" />
+      <End Role="tour_diadiem" EntitySet="tour_diadiem" />
+    </AssociationSet>
+    <AssociationSet Name="FK__doan__idtour__45F365D3" Association="Self.FK__doan__idtour__45F365D3">
+      <End Role="tour" EntitySet="tours" />
+      <End Role="doan" EntitySet="doans" />
+    </AssociationSet>
+    <AssociationSet Name="FK__phancong__iddoan__5441852A" Association="Self.FK__phancong__iddoan__5441852A">
+      <End Role="doan" EntitySet="doans" />
+      <End Role="phancong" EntitySet="phancongs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__gia__idtour__3B75D760" Association="Self.FK__gia__idtour__3B75D760">
+      <End Role="tour" EntitySet="tours" />
+      <End Role="gia" EntitySet="gias" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tour__idloaidl__38996AB5" Association="Self.FK__tour__idloaidl__38996AB5">
+      <End Role="loaidulich" EntitySet="loaiduliches" />
+      <End Role="tour" EntitySet="tours" />
+    </AssociationSet>
+    <AssociationSet Name="FK__phancong__idnhan__5535A963" Association="Self.FK__phancong__idnhan__5535A963">
+      <End Role="nhanvien" EntitySet="nhanviens" />
+      <End Role="phancong" EntitySet="phancongs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tour_diad__idtou__403A8C7D" Association="Self.FK__tour_diad__idtou__403A8C7D">
+      <End Role="tour" EntitySet="tours" />
+      <End Role="tour_diadiem" EntitySet="tour_diadiem" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
