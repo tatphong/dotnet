@@ -6,7 +6,7 @@
     </Key>
     <Property Name="idchiphi" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="idloaicp" Type="int" />
-    <Property Name="iddoan" Type="int" />
+    <Property Name="idtour" Type="int" />
     <Property Name="tongtien" Type="int" />
     <Property Name="ghichu" Type="nvarchar" MaxLength="256" />
   </EntityType>
@@ -35,6 +35,7 @@
     <Property Name="ngaykhoihanh" Type="datetime" />
     <Property Name="ngayketthuc" Type="datetime" />
     <Property Name="tongchiphi" Type="int" />
+    <Property Name="gia" Type="int" />
   </EntityType>
   <EntityType Name="gia">
     <Key>
@@ -77,6 +78,8 @@
     </Key>
     <Property Name="idnhanvien" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="hotennv" Type="nvarchar" MaxLength="50" />
+    <Property Name="cmnd" Type="varchar" MaxLength="20" />
+    <Property Name="blocked" Type="bit" />
   </EntityType>
   <EntityType Name="phancong">
     <Key>
@@ -115,19 +118,7 @@
     <Property Name="idtour" Type="int" />
     <Property Name="iddiadiem" Type="int" />
   </EntityType>
-  <Association Name="FK__chiphi__iddoan__4F7CD00D">
-    <End Role="doan" Type="Self.doan" Multiplicity="0..1" />
-    <End Role="chiphi" Type="Self.chiphi" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="doan">
-        <PropertyRef Name="iddoan" />
-      </Principal>
-      <Dependent Role="chiphi">
-        <PropertyRef Name="iddoan" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__chiphi__idloaicp__4E88ABD4">
+  <Association Name="FK__chiphi__idloaicp__2CF2ADDF">
     <End Role="loaichiphi" Type="Self.loaichiphi" Multiplicity="0..1" />
     <End Role="chiphi" Type="Self.chiphi" Multiplicity="*" />
     <ReferentialConstraint>
@@ -136,6 +127,18 @@
       </Principal>
       <Dependent Role="chiphi">
         <PropertyRef Name="idloaicp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__chiphi__idtour__2DE6D218">
+    <End Role="tour" Type="Self.tour" Multiplicity="0..1" />
+    <End Role="chiphi" Type="Self.chiphi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tour">
+        <PropertyRef Name="idtour" />
+      </Principal>
+      <Dependent Role="chiphi">
+        <PropertyRef Name="idtour" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -187,7 +190,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__phancong__iddoan__5441852A">
+  <Association Name="FK__phancong__iddoan__0B91BA14">
     <End Role="doan" Type="Self.doan" Multiplicity="0..1" />
     <End Role="phancong" Type="Self.phancong" Multiplicity="*" />
     <ReferentialConstraint>
@@ -199,7 +202,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__phancong__idnhan__5535A963">
+  <Association Name="FK__phancong__idnhan__0C85DE4D">
     <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="0..1" />
     <End Role="phancong" Type="Self.phancong" Multiplicity="*" />
     <ReferentialConstraint>
@@ -261,12 +264,12 @@
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tour" EntityType="Self.tour" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tour_diadiem" EntityType="Self.tour_diadiem" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__chiphi__iddoan__4F7CD00D" Association="Self.FK__chiphi__iddoan__4F7CD00D">
-      <End Role="doan" EntitySet="doan" />
+    <AssociationSet Name="FK__chiphi__idloaicp__2CF2ADDF" Association="Self.FK__chiphi__idloaicp__2CF2ADDF">
+      <End Role="loaichiphi" EntitySet="loaichiphi" />
       <End Role="chiphi" EntitySet="chiphi" />
     </AssociationSet>
-    <AssociationSet Name="FK__chiphi__idloaicp__4E88ABD4" Association="Self.FK__chiphi__idloaicp__4E88ABD4">
-      <End Role="loaichiphi" EntitySet="loaichiphi" />
+    <AssociationSet Name="FK__chiphi__idtour__2DE6D218" Association="Self.FK__chiphi__idtour__2DE6D218">
+      <End Role="tour" EntitySet="tour" />
       <End Role="chiphi" EntitySet="chiphi" />
     </AssociationSet>
     <AssociationSet Name="FK__chitietdo__iddoa__7A672E12" Association="Self.FK__chitietdo__iddoa__7A672E12">
@@ -285,11 +288,11 @@
       <End Role="tour" EntitySet="tour" />
       <End Role="gia" EntitySet="gia" />
     </AssociationSet>
-    <AssociationSet Name="FK__phancong__iddoan__5441852A" Association="Self.FK__phancong__iddoan__5441852A">
+    <AssociationSet Name="FK__phancong__iddoan__0B91BA14" Association="Self.FK__phancong__iddoan__0B91BA14">
       <End Role="doan" EntitySet="doan" />
       <End Role="phancong" EntitySet="phancong" />
     </AssociationSet>
-    <AssociationSet Name="FK__phancong__idnhan__5535A963" Association="Self.FK__phancong__idnhan__5535A963">
+    <AssociationSet Name="FK__phancong__idnhan__0C85DE4D" Association="Self.FK__phancong__idnhan__0C85DE4D">
       <End Role="nhanvien" EntitySet="nhanvien" />
       <End Role="phancong" EntitySet="phancong" />
     </AssociationSet>

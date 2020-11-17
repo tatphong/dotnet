@@ -38,6 +38,18 @@ namespace PMPhanLop.DAO
             return res.ToArray()[0];
         }
 
+        public bool kt_tontai_khach(int? idkhach, string cmnd)
+        {
+            khach k;
+            if (idkhach == null)
+                k = db.khaches.Where(p => p.cmnd == cmnd).SingleOrDefault();
+            else 
+                k = db.khaches.Where(p => p.idkhach != idkhach && p.cmnd == cmnd).SingleOrDefault();
+
+            if (k == null) return false;
+            return true;
+        }
+
         public int add_khach(String hoten, String cmnd, bool gioitinh, String sodt, String diachi)
         {
             khach a = new khach() { hoten = hoten, cmnd = cmnd, gioitinh = gioitinh, sodt = sodt, diachi = diachi };

@@ -15,29 +15,27 @@ namespace PMPhanLop.BUS
             return new DAO.DoanDAO().load_doan();
         }
 
-        public bool cleaned_data(String tentour, String tendoan, DateTime ngaykhoihanh, DateTime ngayketthuc, int tongchiphi)
+        public bool cleaned_data(String tentour, String tendoan, DateTime ngaykhoihanh)
         {
-            if (ngaykhoihanh > ngayketthuc || tongchiphi < 500000 )
-                return false;
             if (tentour == null || tendoan == null)
                 return false;
             return true;
         }
 
-        public int add_doan(String tentour, String tendoan, DateTime ngaykhoihanh, DateTime ngayketthuc, int tongchiphi)
+        public int add_doan(String tentour, String tendoan, DateTime ngaykhoihanh)
         {
-            if (!cleaned_data(tentour, tendoan, ngaykhoihanh, ngayketthuc, tongchiphi))
+            if (!cleaned_data(tentour, tendoan, ngaykhoihanh))
                 return 0;
 
             DAO.DoanDAO a = new DAO.DoanDAO();
-            return a.add_doan(new DAO.TourDAO().getID_via_name(tentour), tendoan, ngaykhoihanh, ngayketthuc, tongchiphi);
+            return a.add_doan(new DAO.TourDAO().getID_via_name(tentour), tendoan, ngaykhoihanh);
         }
 
-        public int edit_doan(int iddoan, String tentour, String tendoan, DateTime ngaykhoihanh, DateTime ngayketthuc, int tongchiphi)
+        public int edit_doan(int iddoan, String tentour, String tendoan, DateTime ngaykhoihanh)
         {
-            if (!cleaned_data(tentour, tendoan, ngaykhoihanh, ngayketthuc, tongchiphi))
+            if (!cleaned_data(tentour, tendoan, ngaykhoihanh))
                 return 0;
-            return new DAO.DoanDAO().edit_doan(iddoan, tentour, tendoan, ngaykhoihanh, ngayketthuc, tongchiphi);
+            return new DAO.DoanDAO().edit_doan(iddoan, tentour, tendoan, ngaykhoihanh);
         }
         public void delete_doan(int iddoan)
         {

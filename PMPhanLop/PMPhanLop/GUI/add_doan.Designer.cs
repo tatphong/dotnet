@@ -36,10 +36,6 @@
             this.textBoxTenDoan = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimeKhoiHanh = new System.Windows.Forms.DateTimePicker();
-            this.dateTimeKetThuc = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textTongChiPhi = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -53,7 +49,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(416, 128);
+            this.button2.Location = new System.Drawing.Point(378, 93);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 8;
@@ -63,7 +59,7 @@
             // 
             // btn_them
             // 
-            this.btn_them.Location = new System.Drawing.Point(416, 99);
+            this.btn_them.Location = new System.Drawing.Point(293, 93);
             this.btn_them.Name = "btn_them";
             this.btn_them.Size = new System.Drawing.Size(75, 23);
             this.btn_them.TabIndex = 7;
@@ -102,7 +98,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 102);
+            this.label4.Location = new System.Drawing.Point(8, 68);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 17);
             this.label4.TabIndex = 16;
@@ -111,53 +107,16 @@
             // 
             // dateTimeKhoiHanh
             // 
-            this.dateTimeKhoiHanh.Location = new System.Drawing.Point(122, 99);
+            this.dateTimeKhoiHanh.Location = new System.Drawing.Point(121, 65);
             this.dateTimeKhoiHanh.Name = "dateTimeKhoiHanh";
-            this.dateTimeKhoiHanh.Size = new System.Drawing.Size(247, 22);
+            this.dateTimeKhoiHanh.Size = new System.Drawing.Size(332, 22);
             this.dateTimeKhoiHanh.TabIndex = 17;
-            // 
-            // dateTimeKetThuc
-            // 
-            this.dateTimeKetThuc.Location = new System.Drawing.Point(122, 124);
-            this.dateTimeKetThuc.Name = "dateTimeKetThuc";
-            this.dateTimeKetThuc.Size = new System.Drawing.Size(247, 22);
-            this.dateTimeKetThuc.TabIndex = 19;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 127);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 17);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "Ngày kết thúc";
-            // 
-            // textTongChiPhi
-            // 
-            this.textTongChiPhi.Location = new System.Drawing.Point(104, 62);
-            this.textTongChiPhi.Name = "textTongChiPhi";
-            this.textTongChiPhi.Size = new System.Drawing.Size(349, 22);
-            this.textTongChiPhi.TabIndex = 21;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 65);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 17);
-            this.label6.TabIndex = 20;
-            this.label6.Text = "Tổng chi phí";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // add_doan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(506, 162);
-            this.Controls.Add(this.textTongChiPhi);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.dateTimeKetThuc);
-            this.Controls.Add(this.label5);
+            this.ClientSize = new System.Drawing.Size(463, 131);
             this.Controls.Add(this.dateTimeKhoiHanh);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.comboBox1);
@@ -167,6 +126,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btn_them);
             this.Name = "add_doan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "add_doan";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -182,9 +142,5 @@
         private System.Windows.Forms.TextBox textBoxTenDoan;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimeKhoiHanh;
-        private System.Windows.Forms.DateTimePicker dateTimeKetThuc;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textTongChiPhi;
-        private System.Windows.Forms.Label label6;
     }
 }

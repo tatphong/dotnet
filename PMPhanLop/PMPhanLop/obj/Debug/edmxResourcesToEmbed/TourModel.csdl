@@ -1,17 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="PMPhanLopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="chiphi">
-    <Key>
-      <PropertyRef Name="idchiphi" />
-    </Key>
-    <Property Name="idchiphi" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="idloaicp" Type="Int32" />
-    <Property Name="iddoan" Type="Int32" />
-    <Property Name="tongtien" Type="Int32" />
-    <Property Name="ghichu" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="doan" Relationship="Self.FK__chiphi__iddoan__4F7CD00D" FromRole="chiphi" ToRole="doan" />
-    <NavigationProperty Name="loaichiphi" Relationship="Self.FK__chiphi__idloaicp__4E88ABD4" FromRole="chiphi" ToRole="loaichiphi" />
-  </EntityType>
   <EntityType Name="chitietdoan">
     <Key>
       <PropertyRef Name="idchitietdoan" />
@@ -40,10 +28,10 @@
     <Property Name="ngaykhoihanh" Type="DateTime" Precision="3" />
     <Property Name="ngayketthuc" Type="DateTime" Precision="3" />
     <Property Name="tongchiphi" Type="Int32" />
-    <NavigationProperty Name="chiphis" Relationship="Self.FK__chiphi__iddoan__4F7CD00D" FromRole="doan" ToRole="chiphi" />
     <NavigationProperty Name="chitietdoans" Relationship="Self.FK__chitietdo__iddoa__49C3F6B7" FromRole="doan" ToRole="chitietdoan" />
     <NavigationProperty Name="tour" Relationship="Self.FK__doan__idtour__45F365D3" FromRole="doan" ToRole="tour" />
     <NavigationProperty Name="phancongs" Relationship="Self.FK__phancong__iddoan__5441852A" FromRole="doan" ToRole="phancong" />
+    <Property Name="gia" Type="Int32" />
   </EntityType>
   <EntityType Name="gia">
     <Key>
@@ -74,7 +62,7 @@
     </Key>
     <Property Name="idloaicp" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="tenloaicp" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="chiphis" Relationship="Self.FK__chiphi__idloaicp__4E88ABD4" FromRole="loaichiphi" ToRole="chiphi" />
+    <NavigationProperty Name="chiphis" Relationship="PMPhanLopModel.FK__chiphi__idloaicp__2CF2ADDF" FromRole="loaichiphi" ToRole="chiphi" />
   </EntityType>
   <EntityType Name="loaidulich">
     <Key>
@@ -91,6 +79,8 @@
     <Property Name="idnhanvien" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="hotennv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="phancongs" Relationship="Self.FK__phancong__idnhan__5535A963" FromRole="nhanvien" ToRole="phancong" />
+    <Property Name="cmnd" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="blocked" Type="Boolean" />
   </EntityType>
   <EntityType Name="phancong">
     <Key>
@@ -126,6 +116,7 @@
     <NavigationProperty Name="gias" Relationship="Self.FK__gia__idtour__3B75D760" FromRole="tour" ToRole="gia" />
     <NavigationProperty Name="loaidulich" Relationship="Self.FK__tour__idloaidl__38996AB5" FromRole="tour" ToRole="loaidulich" />
     <NavigationProperty Name="tour_diadiem" Relationship="Self.FK__tour_diad__idtou__403A8C7D" FromRole="tour" ToRole="tour_diadiem" />
+    <NavigationProperty Name="chiphis" Relationship="PMPhanLopModel.FK__chiphi__idtour__2DE6D218" FromRole="tour" ToRole="chiphi" />
   </EntityType>
   <EntityType Name="tour_diadiem">
     <Key>
@@ -137,30 +128,6 @@
     <NavigationProperty Name="diadiem" Relationship="Self.FK__tour_diad__iddia__412EB0B6" FromRole="tour_diadiem" ToRole="diadiem" />
     <NavigationProperty Name="tour" Relationship="Self.FK__tour_diad__idtou__403A8C7D" FromRole="tour_diadiem" ToRole="tour" />
   </EntityType>
-  <Association Name="FK__chiphi__iddoan__4F7CD00D">
-    <End Role="doan" Type="Self.doan" Multiplicity="0..1" />
-    <End Role="chiphi" Type="Self.chiphi" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="doan">
-        <PropertyRef Name="iddoan" />
-      </Principal>
-      <Dependent Role="chiphi">
-        <PropertyRef Name="iddoan" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__chiphi__idloaicp__4E88ABD4">
-    <End Role="loaichiphi" Type="Self.loaichiphi" Multiplicity="0..1" />
-    <End Role="chiphi" Type="Self.chiphi" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="loaichiphi">
-        <PropertyRef Name="idloaicp" />
-      </Principal>
-      <Dependent Role="chiphi">
-        <PropertyRef Name="idloaicp" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__chitietdo__iddoa__49C3F6B7">
     <End Role="doan" Type="Self.doan" Multiplicity="0..1" />
     <End Role="chitietdoan" Type="Self.chitietdoan" Multiplicity="*" />
@@ -270,7 +237,6 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="PMPhanLopEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="chiphis" EntityType="Self.chiphi" />
     <EntitySet Name="chitietdoans" EntityType="Self.chitietdoan" />
     <EntitySet Name="diadiems" EntityType="Self.diadiem" />
     <EntitySet Name="doans" EntityType="Self.doan" />
@@ -283,14 +249,6 @@
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="tours" EntityType="Self.tour" />
     <EntitySet Name="tour_diadiem" EntityType="Self.tour_diadiem" />
-    <AssociationSet Name="FK__chiphi__iddoan__4F7CD00D" Association="Self.FK__chiphi__iddoan__4F7CD00D">
-      <End Role="doan" EntitySet="doans" />
-      <End Role="chiphi" EntitySet="chiphis" />
-    </AssociationSet>
-    <AssociationSet Name="FK__chiphi__idloaicp__4E88ABD4" Association="Self.FK__chiphi__idloaicp__4E88ABD4">
-      <End Role="loaichiphi" EntitySet="loaichiphis" />
-      <End Role="chiphi" EntitySet="chiphis" />
-    </AssociationSet>
     <AssociationSet Name="FK__chitietdo__iddoa__49C3F6B7" Association="Self.FK__chitietdo__iddoa__49C3F6B7">
       <End Role="doan" EntitySet="doans" />
       <End Role="chitietdoan" EntitySet="chitietdoans" />
@@ -327,5 +285,50 @@
       <End Role="tour" EntitySet="tours" />
       <End Role="tour_diadiem" EntitySet="tour_diadiem" />
     </AssociationSet>
+    <EntitySet Name="chiphis" EntityType="PMPhanLopModel.chiphi" />
+    <AssociationSet Name="FK__chiphi__idloaicp__2CF2ADDF" Association="PMPhanLopModel.FK__chiphi__idloaicp__2CF2ADDF">
+      <End Role="loaichiphi" EntitySet="loaichiphis" />
+      <End Role="chiphi" EntitySet="chiphis" />
+    </AssociationSet>
+    <AssociationSet Name="FK__chiphi__idtour__2DE6D218" Association="PMPhanLopModel.FK__chiphi__idtour__2DE6D218">
+      <End Role="tour" EntitySet="tours" />
+      <End Role="chiphi" EntitySet="chiphis" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="chiphi">
+    <Key>
+      <PropertyRef Name="idchiphi" />
+    </Key>
+    <Property Name="idchiphi" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idloaicp" Type="Int32" />
+    <Property Name="idtour" Type="Int32" />
+    <Property Name="tongtien" Type="Int32" />
+    <Property Name="ghichu" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="loaichiphi" Relationship="PMPhanLopModel.FK__chiphi__idloaicp__2CF2ADDF" FromRole="chiphi" ToRole="loaichiphi" />
+    <NavigationProperty Name="tour" Relationship="PMPhanLopModel.FK__chiphi__idtour__2DE6D218" FromRole="chiphi" ToRole="tour" />
+  </EntityType>
+  <Association Name="FK__chiphi__idloaicp__2CF2ADDF">
+    <End Type="PMPhanLopModel.loaichiphi" Role="loaichiphi" Multiplicity="0..1" />
+    <End Type="PMPhanLopModel.chiphi" Role="chiphi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="loaichiphi">
+        <PropertyRef Name="idloaicp" />
+      </Principal>
+      <Dependent Role="chiphi">
+        <PropertyRef Name="idloaicp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__chiphi__idtour__2DE6D218">
+    <End Type="PMPhanLopModel.tour" Role="tour" Multiplicity="0..1" />
+    <End Type="PMPhanLopModel.chiphi" Role="chiphi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tour">
+        <PropertyRef Name="idtour" />
+      </Principal>
+      <Dependent Role="chiphi">
+        <PropertyRef Name="idtour" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

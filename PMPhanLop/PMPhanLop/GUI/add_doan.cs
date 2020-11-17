@@ -35,9 +35,7 @@ namespace PMPhanLop.GUI
             String tentour = comboBox1.GetItemText(comboBox1.SelectedItem);
             String tendoan = textBoxTenDoan.Text;
             DateTime ngaykhoihanh = dateTimeKhoiHanh.Value;
-            DateTime ngayketthuc = dateTimeKetThuc.Value;
-            int tongchiphi = textTongChiPhi.Text == "" ? 0 : Convert.ToInt32(textTongChiPhi.Text);
-            int res = a.add_doan(tentour, tendoan, ngaykhoihanh, ngayketthuc, tongchiphi);
+            int res = a.add_doan(tentour, tendoan, ngaykhoihanh);
             if (res != 0)
             {
                 MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

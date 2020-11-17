@@ -35,6 +35,10 @@ namespace PMPhanLop.BUS
         {
             if (!cleaned_data(hoten, cmnd, sodt, diachi))
                 return 0;
+
+            if (new DAO.KhachDAO().kt_tontai_khach(null, cmnd))
+                return -1;
+
             return new DAO.KhachDAO().add_khach(hoten, cmnd, gioitinh, sodt, diachi);
         }
 
@@ -42,6 +46,10 @@ namespace PMPhanLop.BUS
         {
             if (!cleaned_data(hoten, cmnd, sodt, diachi))
                 return 0;
+
+            if (new DAO.KhachDAO().kt_tontai_khach(idkhach, cmnd))
+                return -1;
+
             return new DAO.KhachDAO().edit_khach(idkhach, hoten, cmnd, gioitinh, sodt, diachi);
         }
 

@@ -25,7 +25,6 @@ namespace PMPhanLop
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<chiphi> chiphis { get; set; }
         public virtual DbSet<chitietdoan> chitietdoans { get; set; }
         public virtual DbSet<diadiem> diadiems { get; set; }
         public virtual DbSet<doan> doans { get; set; }
@@ -38,5 +37,6 @@ namespace PMPhanLop
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<tour> tours { get; set; }
         public virtual DbSet<tour_diadiem> tour_diadiem { get; set; }
+        public virtual DbSet<chiphi> chiphis { get; set; }
     }
 }

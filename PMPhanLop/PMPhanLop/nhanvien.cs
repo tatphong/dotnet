@@ -22,6 +22,8 @@ namespace PMPhanLop
     
         public int idnhanvien { get; set; }
         public string hotennv { get; set; }
+        public string cmnd { get; set; }
+        public Nullable<bool> blocked { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<phancong> phancongs { get; set; }

@@ -1,17 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="PMPhanLopModelStoreContainer" CdmEntityContainer="PMPhanLopEntities">
-    <EntitySetMapping Name="chiphis">
-      <EntityTypeMapping TypeName="PMPhanLopModel.chiphi">
-        <MappingFragment StoreEntitySet="chiphi">
-          <ScalarProperty Name="idchiphi" ColumnName="idchiphi" />
-          <ScalarProperty Name="idloaicp" ColumnName="idloaicp" />
-          <ScalarProperty Name="iddoan" ColumnName="iddoan" />
-          <ScalarProperty Name="tongtien" ColumnName="tongtien" />
-          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="chitietdoans">
       <EntityTypeMapping TypeName="PMPhanLopModel.chitietdoan">
         <MappingFragment StoreEntitySet="chitietdoan">
@@ -32,6 +21,7 @@
     <EntitySetMapping Name="doans">
       <EntityTypeMapping TypeName="PMPhanLopModel.doan">
         <MappingFragment StoreEntitySet="doan">
+          <ScalarProperty Name="gia" ColumnName="gia" />
           <ScalarProperty Name="iddoan" ColumnName="iddoan" />
           <ScalarProperty Name="idtour" ColumnName="idtour" />
           <ScalarProperty Name="tendoan" ColumnName="tendoan" />
@@ -83,6 +73,8 @@
     <EntitySetMapping Name="nhanviens">
       <EntityTypeMapping TypeName="PMPhanLopModel.nhanvien">
         <MappingFragment StoreEntitySet="nhanvien">
+          <ScalarProperty Name="blocked" ColumnName="blocked" />
+          <ScalarProperty Name="cmnd" ColumnName="cmnd" />
           <ScalarProperty Name="idnhanvien" ColumnName="idnhanvien" />
           <ScalarProperty Name="hotennv" ColumnName="hotennv" />
         </MappingFragment>
@@ -126,6 +118,17 @@
           <ScalarProperty Name="idtour_diadiem" ColumnName="idtour_diadiem" />
           <ScalarProperty Name="idtour" ColumnName="idtour" />
           <ScalarProperty Name="iddiadiem" ColumnName="iddiadiem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="chiphis">
+      <EntityTypeMapping TypeName="PMPhanLopModel.chiphi">
+        <MappingFragment StoreEntitySet="chiphi">
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="tongtien" ColumnName="tongtien" />
+          <ScalarProperty Name="idtour" ColumnName="idtour" />
+          <ScalarProperty Name="idloaicp" ColumnName="idloaicp" />
+          <ScalarProperty Name="idchiphi" ColumnName="idchiphi" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

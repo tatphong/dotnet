@@ -69,7 +69,20 @@ namespace PMPhanLop.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            add_gia ag = new add_gia(idtour);
+            ag.ShowDialog();
+            load_data();
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int idgia = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            int giatour = Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value);
+            DateTime ngaybatdau = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[2].Value);
+            DateTime ngayketthuc = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[3].Value);
+            edit_gia eg = new edit_gia(idgia, giatour, ngaybatdau, ngayketthuc);
+            eg.ShowDialog();
+            load_data();
         }
     }
 }

@@ -71,10 +71,12 @@ namespace PMPhanLop.GUI
                 MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Dispose();
             }
-            else
+            else if(res == 0)
             {
-                MessageBox.Show("Dữ liệu không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Dữ liệu không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else if (res == -1)
+                MessageBox.Show("Khách hàng với số CMND tương ứng đã tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void button2_Click(object sender, EventArgs e)

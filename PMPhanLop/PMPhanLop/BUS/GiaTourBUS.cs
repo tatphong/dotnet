@@ -16,6 +16,10 @@ namespace PMPhanLop.BUS
             this.idtour = idtour;
         }
 
+        public GiaTourBUS()
+        {
+        }
+
         public IEnumerable load_gia()
         {
             return new DAO.GiaTourDAO(idtour).load_gia();
@@ -23,9 +27,19 @@ namespace PMPhanLop.BUS
 
         public bool cleaned_data(int giatour, DateTime ngaybatdau, DateTime ngayketthuc)
         {
-            if (giatour >= 100000 || ngaybatdau <= ngayketthuc)
+            if (giatour >= 100000 && ngaybatdau <= ngayketthuc)
                 return true;
             return false;
+        }
+
+        public int add_gia(int giatour, DateTime ngaybatdau, DateTime ngayketthuc)
+        {
+            return new DAO.GiaTourDAO(idtour).add_gia(giatour, ngaybatdau, ngayketthuc);
+        }
+
+        public int edit_gia(int idgia, int giatour, DateTime ngaybatdau, DateTime ngayketthuc)
+        {
+            return new DAO.GiaTourDAO(idtour).edit_gia(idgia, giatour, ngaybatdau, ngayketthuc);
         }
 
         public void delete_gia(int idgia)

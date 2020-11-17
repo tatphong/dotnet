@@ -37,9 +37,9 @@ namespace PMPhanLop.DAO
             return 1;
         }
 
-        public int edit_gia(int giatour, DateTime ngaybatdau, DateTime ngayketthuc)
+        public int edit_gia(int idgia, int giatour, DateTime ngaybatdau, DateTime ngayketthuc)
         {
-            gia g = db.gias.Find(idtour);
+            gia g = db.gias.Find(idgia);
             g.giatour = giatour;
             g.ngaybatdau = ngaybatdau;
             g.ngayketthuc = ngayketthuc;

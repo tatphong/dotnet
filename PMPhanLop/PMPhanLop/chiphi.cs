@@ -16,11 +16,11 @@ namespace PMPhanLop
     {
         public int idchiphi { get; set; }
         public Nullable<int> idloaicp { get; set; }
-        public Nullable<int> iddoan { get; set; }
+        public Nullable<int> idtour { get; set; }
         public Nullable<int> tongtien { get; set; }
         public string ghichu { get; set; }
     
-        public virtual doan doan { get; set; }
         public virtual loaichiphi loaichiphi { get; set; }
+        public virtual tour tour { get; set; }
     }
 }

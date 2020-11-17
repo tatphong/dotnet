@@ -12,13 +12,18 @@ namespace PMPhanLop.DAO
         PMPhanLopEntities db = new PMPhanLopEntities();
         public IEnumerable load_tour()
         {
-            var res = from c in db.tours
+            var now = DateTime.Today;
+            var res = from t in db.tours
+                      join g in db.gias.Where(p=> p.ngaybatdau <= now && now <= p.ngayketthuc) on t.idtour equals g.idtour 
+                      into data
+                      from c in data.DefaultIfEmpty()
                       select new
                       {
-                          idtour = c.idtour,
-                          tenloaidulich = c.loaidulich.tenloaidl,
-                          tentour = c.tentour,
-                          thoigiantour = c.thoigiantour
+                          idtour = t.idtour,
+                          tenloaidulich = t.loaidulich.tenloaidl,
+                          tentour = t.tentour,
+                          thoigiantour = t.thoigiantour,
+                          giatour = c.giatour
                       };
             return res.ToList();
         }
@@ -76,8 +81,29 @@ namespace PMPhanLop.DAO
 
         public IEnumerable search(String s)
         {
-            var res = db.tours.Where(p => p.tentour.Contains(s) || p.loaidulich.tenloaidl.Contains(s)).ToList();
-            return res;
+            //var res = db.tours.Where(p => p.tentour.Contains(s) || p.loaidulich.tenloaidl.Contains(s)).Select(p =>
+            //                        new {
+            //                            MaTour = p.idtour,
+            //                            TenLoaiDuLich = p.loaidulich.tenloaidl,
+            //                            TenTour = p.tentour,
+            //                            ThoiGianTour = p.thoigiantour,
+            //                            GiaTour = p.gias.Where(q => q.idtour == p.idtour && q.ngaybatdau <= DateTime.Today && DateTime.Today <= q.ngayketthuc).Select(q => q.giatour)
+            //                        }).ToList();
+
+            var now = DateTime.Today;
+            var res = from t in db.tours.Where(p => p.tentour.Contains(s) || p.loaidulich.tenloaidl.Contains(s))
+                      join g in db.gias.Where(p => p.ngaybatdau <= now && now <= p.ngayketthuc) on t.idtour equals g.idtour
+                      into data
+                      from c in data.DefaultIfEmpty()
+                      select new
+                      {
+                          idtour = t.idtour,
+                          tenloaidulich = t.loaidulich.tenloaidl,
+                          tentour = t.tentour,
+                          thoigiantour = t.thoigiantour,
+                          giatour = c.giatour
+                      };
+            return res.ToList();
         }
     }
 }

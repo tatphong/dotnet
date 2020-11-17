@@ -33,9 +33,13 @@ namespace PMPhanLop.GUI
 
         private void button3_Click(object sender, EventArgs e)
         {
-            int idkhach = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-            new BUS.ChitietDoanBUS(v).delete_ctdoan(idkhach);
-            load_data();
+            var DialogResult = MessageBox.Show("Bạn thực sự muốn xóa chứ?", "Cảnh báo!!!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (DialogResult == DialogResult.Yes)
+            {
+                int idkhach = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+                new BUS.ChitietDoanBUS(v).delete_ctdoan(idkhach);
+                load_data();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -43,6 +47,11 @@ namespace PMPhanLop.GUI
             add_ctdoan a = new add_ctdoan(this.v);
             a.ShowDialog();
             load_data();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

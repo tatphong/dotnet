@@ -20,6 +20,7 @@ namespace PMPhanLop
             this.doans = new HashSet<doan>();
             this.gias = new HashSet<gia>();
             this.tour_diadiem = new HashSet<tour_diadiem>();
+            this.chiphis = new HashSet<chiphi>();
         }
     
         public int idtour { get; set; }
@@ -34,5 +35,7 @@ namespace PMPhanLop
         public virtual loaidulich loaidulich { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tour_diadiem> tour_diadiem { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<chiphi> chiphis { get; set; }
     }
 }

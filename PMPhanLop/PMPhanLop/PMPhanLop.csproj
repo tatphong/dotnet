@@ -57,10 +57,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\ChiPhiBUS.cs" />
     <Compile Include="BUS\ChitietDoanBUS.cs" />
+    <Compile Include="BUS\DiaDiemBUS.cs" />
     <Compile Include="BUS\DoanBUS.cs" />
     <Compile Include="BUS\GiaTourBUS.cs" />
     <Compile Include="BUS\KhachBUS.cs" />
+    <Compile Include="BUS\NhanVienBUS.cs" />
+    <Compile Include="BUS\PhanCongBUS.cs" />
+    <Compile Include="BUS\ThongKeBUS.cs" />
     <Compile Include="BUS\TourBUS.cs" />
     <Compile Include="chiphi.cs">
       <DependentUpon>TourModel.tt</DependentUpon>
@@ -68,10 +73,15 @@
     <Compile Include="chitietdoan.cs">
       <DependentUpon>TourModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAO\ChiPhiDAO.cs" />
     <Compile Include="DAO\ChitietDoanDAO.cs" />
+    <Compile Include="DAO\DiaDiemDAO.cs" />
     <Compile Include="DAO\DoanDAO.cs" />
     <Compile Include="DAO\GiaTourDAO.cs" />
     <Compile Include="DAO\KhachDAO.cs" />
+    <Compile Include="DAO\NhanVienDAO.cs" />
+    <Compile Include="DAO\PhanCongDAO.cs" />
+    <Compile Include="DAO\ThongKeDAO.cs" />
     <Compile Include="DAO\TourDAO.cs" />
     <Compile Include="diadiem.cs">
       <DependentUpon>TourModel.tt</DependentUpon>
@@ -79,11 +89,23 @@
     <Compile Include="doan.cs">
       <DependentUpon>TourModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="GUI\add_chiphi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\add_chiphi.Designer.cs">
+      <DependentUpon>add_chiphi.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\add_ctdoan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\add_ctdoan.Designer.cs">
       <DependentUpon>add_ctdoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\add_diadiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\add_diadiem.Designer.cs">
+      <DependentUpon>add_diadiem.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\add_doan.cs">
       <SubType>Form</SubType>
@@ -103,6 +125,18 @@
     <Compile Include="GUI\add_khach.Designer.cs">
       <DependentUpon>add_khach.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\add_nhanvien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\add_nhanvien.Designer.cs">
+      <DependentUpon>add_nhanvien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\add_phancong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\add_phancong.Designer.cs">
+      <DependentUpon>add_phancong.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\add_tour.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,17 +149,41 @@
     <Compile Include="GUI\bangGiaTour.Designer.cs">
       <DependentUpon>bangGiaTour.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\bangPhanCong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\bangPhanCong.Designer.cs">
+      <DependentUpon>bangPhanCong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ChiPhiGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ChiPhiGUI.Designer.cs">
+      <DependentUpon>ChiPhiGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ChitietDoanGUI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\ChitietDoanGUI.Designer.cs">
       <DependentUpon>ChitietDoanGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\DiaDiemGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DiaDiemGUI.Designer.cs">
+      <DependentUpon>DiaDiemGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\DoanGUI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\DoanGUI.Designer.cs">
       <DependentUpon>DoanGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\edit_chiphi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\edit_chiphi.Designer.cs">
+      <DependentUpon>edit_chiphi.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\edit_doan.cs">
       <SubType>Form</SubType>
@@ -145,6 +203,18 @@
     <Compile Include="GUI\edit_khach.Designer.cs">
       <DependentUpon>edit_khach.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\edit_nhanvien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\edit_nhanvien.Designer.cs">
+      <DependentUpon>edit_nhanvien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\edit_phancong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\edit_phancong.Designer.cs">
+      <DependentUpon>edit_phancong.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\edit_tour.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +226,18 @@
     </Compile>
     <Compile Include="GUI\khachGUI.Designer.cs">
       <DependentUpon>khachGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\NhanVienGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\NhanVienGUI.Designer.cs">
+      <DependentUpon>NhanVienGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThongKeDoanhThuGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ThongKeDoanhThuGUI.Designer.cs">
+      <DependentUpon>ThongKeDoanhThuGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="main.cs">
       <SubType>Form</SubType>
@@ -213,14 +295,29 @@
     <Compile Include="tour_diadiem.cs">
       <DependentUpon>TourModel.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GUI\add_chiphi.resx">
+      <DependentUpon>add_chiphi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\add_ctdoan.resx">
       <DependentUpon>add_ctdoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\add_diadiem.resx">
+      <DependentUpon>add_diadiem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\add_doan.resx">
       <DependentUpon>add_doan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\add_gia.resx">
+      <DependentUpon>add_gia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\add_khach.resx">
       <DependentUpon>add_khach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\add_nhanvien.resx">
+      <DependentUpon>add_nhanvien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\add_phancong.resx">
+      <DependentUpon>add_phancong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\add_tour.resx">
       <DependentUpon>add_tour.cs</DependentUpon>
@@ -228,23 +325,50 @@
     <EmbeddedResource Include="GUI\bangGiaTour.resx">
       <DependentUpon>bangGiaTour.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\bangPhanCong.resx">
+      <DependentUpon>bangPhanCong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ChiPhiGUI.resx">
+      <DependentUpon>ChiPhiGUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ChitietDoanGUI.resx">
       <DependentUpon>ChitietDoanGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DiaDiemGUI.resx">
+      <DependentUpon>DiaDiemGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DoanGUI.resx">
       <DependentUpon>DoanGUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\edit_chiphi.resx">
+      <DependentUpon>edit_chiphi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\edit_doan.resx">
       <DependentUpon>edit_doan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\edit_gia.resx">
+      <DependentUpon>edit_gia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\edit_khach.resx">
       <DependentUpon>edit_khach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\edit_nhanvien.resx">
+      <DependentUpon>edit_nhanvien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\edit_phancong.resx">
+      <DependentUpon>edit_phancong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\edit_tour.resx">
       <DependentUpon>edit_tour.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\khachGUI.resx">
       <DependentUpon>khachGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\NhanVienGUI.resx">
+      <DependentUpon>NhanVienGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThongKeDoanhThuGUI.resx">
+      <DependentUpon>ThongKeDoanhThuGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\TourGUI.resx">
       <DependentUpon>TourGUI.cs</DependentUpon>

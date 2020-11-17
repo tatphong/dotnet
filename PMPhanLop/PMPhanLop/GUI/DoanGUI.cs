@@ -67,5 +67,13 @@ namespace PMPhanLop.GUI
         {
             dataGridView1.DataSource = new BUS.DoanBUS().search(textBox1.Text);
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            bangPhanCong a = new bangPhanCong(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+            a.ShowDialog();
+            this.Show();
+        }
     }
 }

@@ -17,7 +17,6 @@ namespace PMPhanLop
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public doan()
         {
-            this.chiphis = new HashSet<chiphi>();
             this.chitietdoans = new HashSet<chitietdoan>();
             this.phancongs = new HashSet<phancong>();
         }
@@ -28,9 +27,8 @@ namespace PMPhanLop
         public Nullable<System.DateTime> ngaykhoihanh { get; set; }
         public Nullable<System.DateTime> ngayketthuc { get; set; }
         public Nullable<int> tongchiphi { get; set; }
+        public Nullable<int> gia { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<chiphi> chiphis { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<chitietdoan> chitietdoans { get; set; }
         public virtual tour tour { get; set; }

@@ -28,10 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textTongChiPhi = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dateTimeKetThuc = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
             this.dateTimeKhoiHanh = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -42,49 +38,17 @@
             this.btn_them = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textTongChiPhi
-            // 
-            this.textTongChiPhi.Location = new System.Drawing.Point(107, 58);
-            this.textTongChiPhi.Name = "textTongChiPhi";
-            this.textTongChiPhi.Size = new System.Drawing.Size(349, 22);
-            this.textTongChiPhi.TabIndex = 33;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 61);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 17);
-            this.label6.TabIndex = 32;
-            this.label6.Text = "Tổng chi phí";
-            // 
-            // dateTimeKetThuc
-            // 
-            this.dateTimeKetThuc.Location = new System.Drawing.Point(125, 120);
-            this.dateTimeKetThuc.Name = "dateTimeKetThuc";
-            this.dateTimeKetThuc.Size = new System.Drawing.Size(247, 22);
-            this.dateTimeKetThuc.TabIndex = 31;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 123);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 17);
-            this.label5.TabIndex = 30;
-            this.label5.Text = "Ngày kết thúc";
-            // 
             // dateTimeKhoiHanh
             // 
-            this.dateTimeKhoiHanh.Location = new System.Drawing.Point(125, 95);
+            this.dateTimeKhoiHanh.Location = new System.Drawing.Point(124, 61);
             this.dateTimeKhoiHanh.Name = "dateTimeKhoiHanh";
-            this.dateTimeKhoiHanh.Size = new System.Drawing.Size(247, 22);
+            this.dateTimeKhoiHanh.Size = new System.Drawing.Size(332, 22);
             this.dateTimeKhoiHanh.TabIndex = 29;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 98);
+            this.label4.Location = new System.Drawing.Point(11, 64);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 17);
             this.label4.TabIndex = 28;
@@ -127,7 +91,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(419, 120);
+            this.button2.Location = new System.Drawing.Point(381, 90);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 27);
             this.button2.TabIndex = 23;
@@ -137,7 +101,7 @@
             // 
             // btn_them
             // 
-            this.btn_them.Location = new System.Drawing.Point(419, 86);
+            this.btn_them.Location = new System.Drawing.Point(296, 89);
             this.btn_them.Name = "btn_them";
             this.btn_them.Size = new System.Drawing.Size(75, 28);
             this.btn_them.TabIndex = 22;
@@ -149,11 +113,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(502, 154);
-            this.Controls.Add(this.textTongChiPhi);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.dateTimeKetThuc);
-            this.Controls.Add(this.label5);
+            this.ClientSize = new System.Drawing.Size(464, 124);
             this.Controls.Add(this.dateTimeKhoiHanh);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.comboBox1);
@@ -171,11 +131,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textTongChiPhi;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimeKetThuc;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dateTimeKhoiHanh;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox1;

@@ -45,5 +45,21 @@ namespace PMPhanLop
             a.ShowDialog();
             this.Show();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GUI.NhanVienGUI a = new GUI.NhanVienGUI();
+            a.ShowDialog();
+            this.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GUI.ThongKeDoanhThuGUI a = new GUI.ThongKeDoanhThuGUI();
+            a.ShowDialog();
+            this.Show();
+        }
     }
 }

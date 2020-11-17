@@ -72,5 +72,20 @@ namespace PMPhanLop.GUI
             bgt.ShowDialog();
             load_data();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            DiaDiemGUI dd = new DiaDiemGUI(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+            dd.ShowDialog();
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ChiPhiGUI a = new ChiPhiGUI(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+            a.ShowDialog();
+            this.Show();
+        }
     }
 }
