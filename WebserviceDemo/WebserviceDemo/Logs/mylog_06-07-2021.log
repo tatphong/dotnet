@@ -1,0 +1,5 @@
+2021-07-06 11:36:37,943 [6] INFO  WebserviceDemo.WebForm1 - Form submitted, Event started
+2021-07-06 11:36:37,954 [6] INFO  WebserviceDemo.DemoService - DemoService started
+2021-07-06 11:36:37,954 [6] INFO  WebserviceDemo.DemoService - Get name: 1235
+2021-07-06 11:36:37,961 [6] INFO  WebserviceDemo.DemoService - ProcessHello
+2021-07-06 11:36:38,852 [6] WARN  WebserviceDemo.DemoService - User have invalid name

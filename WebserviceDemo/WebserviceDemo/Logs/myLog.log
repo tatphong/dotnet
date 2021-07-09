@@ -1,0 +1,26 @@
+2021-07-05 10:35:04,521 [6] WARN WebserviceDemo.DemoService - User have invalid name
+2021-07-05 10:35:06,254 [7] INFO WebserviceDemo.WebForm1 - Form submitted, Event started
+2021-07-05 10:35:06,255 [7] INFO WebserviceDemo.DemoService - DemoService started
+2021-07-05 10:35:06,567 [12] INFO WebserviceDemo.WebForm1 - Form submitted, Event started
+2021-07-05 10:35:06,569 [12] INFO WebserviceDemo.DemoService - DemoService started
+2021-07-05 10:35:11,607 [12] WARN WebserviceDemo.DemoService - User have invalid name
+2021-07-05 10:35:12,859 [7] WARN WebserviceDemo.DemoService - User have invalid name
+2021-07-06 11:00:01,214 [8] INFO WebserviceDemo.WebForm1 - Form submitted, Event started
+2021-07-06 11:00:01,281 [8] INFO WebserviceDemo.DemoService - DemoService started
+2021-07-06 11:00:01,282 [8] INFO WebserviceDemo.DemoService - Get name: phong tat
+2021-07-06 11:00:01,313 [8] INFO WebserviceDemo.DemoService - ProcessHello
+2021-07-06 11:00:01,395 [8] INFO WebserviceDemo.DBConnector - Starting saveDB
+2021-07-06 11:00:03,110 [8] INFO WebserviceDemo.DBConnector - Connected to db
+2021-07-06 11:00:03,272 [8] INFO WebserviceDemo.DBConnector - Name saved to DB
+2021-07-06 11:00:03,320 [8] INFO WebserviceDemo.DemoService - ProcessHello return: Hello phong tat
+2021-07-06 11:00:36,676 [6] INFO WebserviceDemo.DemoService - DemoService started
+2021-07-06 11:00:36,676 [6] INFO WebserviceDemo.DemoService - Get name: 1234
+2021-07-06 11:00:36,676 [6] INFO WebserviceDemo.DemoService - ProcessHello
+2021-07-06 11:02:09,456 [6] WARN WebserviceDemo.DemoService - User have invalid name
+2021-07-06 11:02:47,295 [6] INFO WebserviceDemo.DemoService - DemoService started
+2021-07-06 11:02:47,296 [6] INFO WebserviceDemo.DemoService - Get name: giang
+2021-07-06 11:02:47,296 [6] INFO WebserviceDemo.DemoService - ProcessHello
+2021-07-06 11:02:47,296 [6] INFO WebserviceDemo.DBConnector - Starting saveDB
+2021-07-06 11:02:47,329 [6] INFO WebserviceDemo.DBConnector - Connected to db
+2021-07-06 11:02:47,331 [6] INFO WebserviceDemo.DBConnector - Name saved to DB
+2021-07-06 11:02:47,332 [6] INFO WebserviceDemo.DemoService - ProcessHello return: Hello giang

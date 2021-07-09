@@ -32,7 +32,6 @@ D:\Code\dotnet\PMPhanLop\PMPhanLop\bin\Debug\EntityFramework.dll
 D:\Code\dotnet\PMPhanLop\PMPhanLop\bin\Debug\EntityFramework.SqlServer.dll
 D:\Code\dotnet\PMPhanLop\PMPhanLop\bin\Debug\EntityFramework.xml
 D:\Code\dotnet\PMPhanLop\PMPhanLop\bin\Debug\EntityFramework.SqlServer.xml
-D:\Code\dotnet\PMPhanLop\PMPhanLop\obj\Debug\PMPhanLop.csprojResolveAssemblyReference.cache
 D:\Code\dotnet\PMPhanLop\PMPhanLop\obj\Debug\PMPhanLop.GUI.add_ctdoan.resources
 D:\Code\dotnet\PMPhanLop\PMPhanLop\obj\Debug\PMPhanLop.GUI.add_doan.resources
 D:\Code\dotnet\PMPhanLop\PMPhanLop\obj\Debug\PMPhanLop.GUI.add_gia.resources
@@ -62,3 +61,6 @@ D:\Code\dotnet\PMPhanLop\PMPhanLop\obj\Debug\PMPhanLop.GUI.ChiPhiGUI.resources
 D:\Code\dotnet\PMPhanLop\PMPhanLop\obj\Debug\PMPhanLop.GUI.add_chiphi.resources
 D:\Code\dotnet\PMPhanLop\PMPhanLop\obj\Debug\PMPhanLop.GUI.edit_chiphi.resources
 D:\Code\dotnet\PMPhanLop\PMPhanLop\obj\Debug\PMPhanLop.GUI.ThongKeDoanhThuGUI.resources
+D:\Code\dotnet\PMPhanLop\PMPhanLop\obj\Debug\PMPhanLop.csproj.AssemblyReference.cache
+D:\Code\dotnet\PMPhanLop\PMPhanLop\obj\Debug\PMPhanLop.csproj.CoreCompileInputs.cache
+D:\Code\dotnet\PMPhanLop\PMPhanLop\obj\Debug\PMPhanLop.csproj.CopyComplete
