@@ -1,0 +1,24 @@
+2021-07-17 17:52:44,951 [5] INFO  WebserviceDemo.DemoService - DemoService started
+2021-07-17 17:52:44,959 [5] INFO  WebserviceDemo.DemoService - Get name: phong
+2021-07-17 17:52:44,965 [5] INFO  WebserviceDemo.DemoService - ProcessHello
+2021-07-17 17:52:44,965 [5] INFO  WebserviceDemo.DemoService - ProcessHello return: Hello phong
+2021-07-17 17:53:55,024 [6] INFO  WebserviceDemo.DemoService - DemoService started
+2021-07-17 17:53:55,024 [6] INFO  WebserviceDemo.DemoService - Get name: HelloWorld?phong
+2021-07-17 17:53:55,024 [6] INFO  WebserviceDemo.DemoService - ProcessHello
+2021-07-17 17:53:55,024 [6] INFO  WebserviceDemo.DemoService - ProcessHello return: Hello HelloWorld?phong
+2021-07-17 17:54:12,515 [7] INFO  WebserviceDemo.DemoService - DemoService started
+2021-07-17 17:54:12,529 [7] INFO  WebserviceDemo.DemoService - Get name: phong
+2021-07-17 17:54:12,529 [7] INFO  WebserviceDemo.DemoService - ProcessHello
+2021-07-17 17:54:12,529 [7] INFO  WebserviceDemo.DemoService - ProcessHello return: Hello phong
+2021-07-17 17:55:02,921 [7] INFO  WebserviceDemo.DemoService - DemoService started
+2021-07-17 17:55:02,921 [7] INFO  WebserviceDemo.DemoService - Get name: phong
+2021-07-17 17:55:02,921 [7] INFO  WebserviceDemo.DemoService - ProcessHello
+2021-07-17 17:55:02,921 [7] INFO  WebserviceDemo.DemoService - ProcessHello return: Hello phong
+2021-07-17 17:55:48,295 [6] INFO  WebserviceDemo.DemoService - DemoService started
+2021-07-17 17:55:48,295 [6] INFO  WebserviceDemo.DemoService - Get name: phong
+2021-07-17 17:55:48,295 [6] INFO  WebserviceDemo.DemoService - ProcessHello
+2021-07-17 17:55:48,295 [6] INFO  WebserviceDemo.DemoService - ProcessHello return: Hello phong
+2021-07-17 17:55:56,437 [6] INFO  WebserviceDemo.DemoService - DemoService started
+2021-07-17 17:55:56,437 [6] INFO  WebserviceDemo.DemoService - Get name: phong
+2021-07-17 17:55:56,437 [6] INFO  WebserviceDemo.DemoService - ProcessHello
+2021-07-17 17:55:56,437 [6] INFO  WebserviceDemo.DemoService - ProcessHello return: Hello phong

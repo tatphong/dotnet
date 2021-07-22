@@ -1,0 +1,20 @@
+2021-07-09 15:14:19,479 [8] INFO  WebserviceDemo.DemoService - DemoService started
+2021-07-09 15:14:19,486 [8] INFO  WebserviceDemo.DemoService - Get name: phong tat
+2021-07-09 15:14:19,513 [8] INFO  WebserviceDemo.DemoService - ProcessHello
+2021-07-09 15:14:19,529 [8] INFO  WebserviceDemo.DBConnector - Starting saveDB
+2021-07-09 15:15:03,056 [6] INFO  WebserviceDemo.DemoService - DemoService started
+2021-07-09 15:15:03,065 [6] INFO  WebserviceDemo.DemoService - Get name: phong tat
+2021-07-09 15:15:03,070 [6] INFO  WebserviceDemo.DemoService - ProcessHello
+2021-07-09 15:15:03,070 [6] INFO  WebserviceDemo.DemoService - ProcessHello return: Hello phong tat
+2021-07-09 15:20:03,934 [7] INFO  WebserviceDemo.DemoService - DemoService started
+2021-07-09 15:20:03,950 [7] INFO  WebserviceDemo.DemoService - Get name: phong tat
+2021-07-09 15:20:03,950 [7] INFO  WebserviceDemo.DemoService - ProcessHello
+2021-07-09 15:20:03,951 [7] INFO  WebserviceDemo.DemoService - ProcessHello return: Hello phong tat
+2021-07-09 15:33:12,871 [13] INFO  WebserviceDemo.DemoService - DemoService started
+2021-07-09 15:33:12,871 [13] INFO  WebserviceDemo.DemoService - Get name: phong tat
+2021-07-09 15:33:12,871 [13] INFO  WebserviceDemo.DemoService - ProcessHello
+2021-07-09 15:33:12,871 [13] INFO  WebserviceDemo.DemoService - ProcessHello return: Hello phong tat
+2021-07-09 16:11:13,283 [38] INFO  WebserviceDemo.DemoService - DemoService started
+2021-07-09 16:11:13,283 [38] INFO  WebserviceDemo.DemoService - Get name: pHONG
+2021-07-09 16:11:13,284 [38] INFO  WebserviceDemo.DemoService - ProcessHello
+2021-07-09 16:11:13,284 [38] INFO  WebserviceDemo.DemoService - ProcessHello return: Hello pHONG

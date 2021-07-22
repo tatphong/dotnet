@@ -50,12 +50,20 @@ namespace WebserviceDemo
                 return "";
             }
 
-            DBConnector db = new DBConnector();
-            db.saveDB(name);
+            //DBConnector db = new DBConnector();
+            //db.saveDB(name);
 
             string res = "Hello " + name;
             log.Info("ProcessHello return: "+ res);
             return res;
+        }
+
+        [WebMethod]
+        public int Calc(int a, int b)
+        {
+            XmlConfigurator.Configure();
+
+            return a+b;
         }
     }
 }

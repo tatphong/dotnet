@@ -1,0 +1,24 @@
+2021-07-18 11:49:03,717 [7] INFO  WebserviceDemo.DemoService - DemoService started
+2021-07-18 11:49:03,766 [7] INFO  WebserviceDemo.DemoService - Get name: pHONG
+2021-07-18 11:49:03,766 [7] INFO  WebserviceDemo.DemoService - ProcessHello
+2021-07-18 11:49:03,766 [7] INFO  WebserviceDemo.DemoService - ProcessHello return: Hello pHONG
+2021-07-18 16:24:04,749 [68] INFO  WebserviceDemo.DemoService - DemoService started
+2021-07-18 16:24:04,749 [68] INFO  WebserviceDemo.DemoService - Get name: pHONG
+2021-07-18 16:24:04,749 [68] INFO  WebserviceDemo.DemoService - ProcessHello
+2021-07-18 16:24:04,749 [68] INFO  WebserviceDemo.DemoService - ProcessHello return: Hello pHONG
+2021-07-18 16:42:10,387 [16] INFO  WebserviceDemo.DemoService - DemoService started
+2021-07-18 16:42:10,395 [16] INFO  WebserviceDemo.DemoService - Get name: pHONG
+2021-07-18 16:42:10,401 [16] INFO  WebserviceDemo.DemoService - ProcessHello
+2021-07-18 16:42:10,401 [16] INFO  WebserviceDemo.DemoService - ProcessHello return: Hello pHONG
+2021-07-18 17:09:37,961 [27] INFO  WebserviceDemo.DemoService - DemoService started
+2021-07-18 17:09:37,961 [27] INFO  WebserviceDemo.DemoService - Get name: pHONG
+2021-07-18 17:09:37,961 [27] INFO  WebserviceDemo.DemoService - ProcessHello
+2021-07-18 17:09:37,961 [27] INFO  WebserviceDemo.DemoService - ProcessHello return: Hello pHONG
+2021-07-18 17:16:29,087 [27] INFO  WebserviceDemo.DemoService - DemoService started
+2021-07-18 17:16:29,087 [27] INFO  WebserviceDemo.DemoService - Get name: pHONG
+2021-07-18 17:16:29,087 [27] INFO  WebserviceDemo.DemoService - ProcessHello
+2021-07-18 17:16:29,087 [27] INFO  WebserviceDemo.DemoService - ProcessHello return: Hello pHONG
+2021-07-18 17:17:01,188 [27] INFO  WebserviceDemo.DemoService - DemoService started
+2021-07-18 17:17:01,188 [27] INFO  WebserviceDemo.DemoService - Get name: pHONG
+2021-07-18 17:17:01,188 [27] INFO  WebserviceDemo.DemoService - ProcessHello
+2021-07-18 17:17:01,188 [27] INFO  WebserviceDemo.DemoService - ProcessHello return: Hello pHONG
