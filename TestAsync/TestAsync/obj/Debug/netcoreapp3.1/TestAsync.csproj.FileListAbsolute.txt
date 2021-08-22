@@ -1,0 +1,13 @@
+C:\Users\Phong\Desktop\TestAsync\TestAsync\obj\Debug\netcoreapp3.1\TestAsync.csprojAssemblyReference.cache
+C:\Users\Phong\Desktop\TestAsync\TestAsync\obj\Debug\netcoreapp3.1\TestAsync.AssemblyInfoInputs.cache
+C:\Users\Phong\Desktop\TestAsync\TestAsync\obj\Debug\netcoreapp3.1\TestAsync.AssemblyInfo.cs
+C:\Users\Phong\Desktop\TestAsync\TestAsync\obj\Debug\netcoreapp3.1\TestAsync.csproj.CoreCompileInputs.cache
+C:\Users\Phong\Desktop\TestAsync\TestAsync\bin\Debug\netcoreapp3.1\TestAsync.exe
+C:\Users\Phong\Desktop\TestAsync\TestAsync\bin\Debug\netcoreapp3.1\TestAsync.deps.json
+C:\Users\Phong\Desktop\TestAsync\TestAsync\bin\Debug\netcoreapp3.1\TestAsync.runtimeconfig.json
+C:\Users\Phong\Desktop\TestAsync\TestAsync\bin\Debug\netcoreapp3.1\TestAsync.runtimeconfig.dev.json
+C:\Users\Phong\Desktop\TestAsync\TestAsync\bin\Debug\netcoreapp3.1\TestAsync.dll
+C:\Users\Phong\Desktop\TestAsync\TestAsync\bin\Debug\netcoreapp3.1\TestAsync.pdb
+C:\Users\Phong\Desktop\TestAsync\TestAsync\obj\Debug\netcoreapp3.1\TestAsync.dll
+C:\Users\Phong\Desktop\TestAsync\TestAsync\obj\Debug\netcoreapp3.1\TestAsync.pdb
+C:\Users\Phong\Desktop\TestAsync\TestAsync\obj\Debug\netcoreapp3.1\TestAsync.genruntimeconfig.cache
