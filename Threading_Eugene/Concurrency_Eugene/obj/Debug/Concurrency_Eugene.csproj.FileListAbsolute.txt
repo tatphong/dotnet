@@ -1,0 +1,14 @@
+E:\Code\dotnet\Concurrency_Eugene\Concurrency_Eugene\bin\Debug\Concurrency_Eugene.exe.config
+E:\Code\dotnet\Concurrency_Eugene\Concurrency_Eugene\bin\Debug\Concurrency_Eugene.exe
+E:\Code\dotnet\Concurrency_Eugene\Concurrency_Eugene\bin\Debug\Concurrency_Eugene.pdb
+E:\Code\dotnet\Concurrency_Eugene\Concurrency_Eugene\obj\Debug\Concurrency_Eugene.csprojAssemblyReference.cache
+E:\Code\dotnet\Concurrency_Eugene\Concurrency_Eugene\obj\Debug\Concurrency_Eugene.csproj.CoreCompileInputs.cache
+E:\Code\dotnet\Concurrency_Eugene\Concurrency_Eugene\obj\Debug\Concurrency_Eugene.exe
+E:\Code\dotnet\Concurrency_Eugene\Concurrency_Eugene\obj\Debug\Concurrency_Eugene.pdb
+E:\Code\dotnet\Threading_Eugene\Concurrency_Eugene\bin\Debug\Concurrency_Eugene.exe.config
+E:\Code\dotnet\Threading_Eugene\Concurrency_Eugene\bin\Debug\Concurrency_Eugene.exe
+E:\Code\dotnet\Threading_Eugene\Concurrency_Eugene\bin\Debug\Concurrency_Eugene.pdb
+E:\Code\dotnet\Threading_Eugene\Concurrency_Eugene\obj\Debug\Concurrency_Eugene.csprojAssemblyReference.cache
+E:\Code\dotnet\Threading_Eugene\Concurrency_Eugene\obj\Debug\Concurrency_Eugene.csproj.CoreCompileInputs.cache
+E:\Code\dotnet\Threading_Eugene\Concurrency_Eugene\obj\Debug\Concurrency_Eugene.exe
+E:\Code\dotnet\Threading_Eugene\Concurrency_Eugene\obj\Debug\Concurrency_Eugene.pdb
