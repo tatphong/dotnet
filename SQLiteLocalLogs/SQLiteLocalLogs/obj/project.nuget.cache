@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "usRmCcKQ/H66UXwuBZWkWvhs27/QB1B3kYSenlbODa+CykmQWO3V/m7Eg80cW2mT4YkCOoEopXLmF+5C3Ielkg==",
+  "dgSpecHash": "3kTgu1a2js++EqED5XuXgTun1RlFUJiJSwtcbL+qGfpc4cxFAjEyL8PZs3gPvfBD3+L3AWchj9UQgHPkcGYF5g==",
   "success": true,
-  "projectFilePath": "E:\\Code\\dotnet\\SQLiteLocalLogs\\SQLiteLocalLogs\\SQLiteLocalLogs.csproj",
+  "projectFilePath": "D:\\Code\\dotnet\\SQLiteLocalLogs\\SQLiteLocalLogs\\SQLiteLocalLogs.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Phong\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\Phong\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

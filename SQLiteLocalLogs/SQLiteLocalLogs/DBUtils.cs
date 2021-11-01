@@ -8,163 +8,151 @@ namespace SQLiteLocalLogs
 {
     class DBUtils
     {
-
-        static SQLiteConnection m_dbConnection = new SQLiteConnection("Data Source=db.sqlite;Version=3;");
+        static string conn_string = "Data Source=db.sqlite;Version=3;";
         static DateTime today = DateTime.Today;
 
         public DBUtils()
         {
-            m_dbConnection.Open();
-            //create table
-            try
+            using (SQLiteConnection conn = new SQLiteConnection(conn_string))
             {
+                conn.Open();
                 string sql = "create table Logs (transactionID nvarchar(20), " +
                                                 "transactionDate datetime); ";
-
-                SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
-                command.ExecuteNonQuery();
+                try
+                {
+                    SQLiteCommand command = new SQLiteCommand(sql, conn);
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Table Logs already existed.");
+                }
             }
-            catch (Exception)
-            {
-                Console.WriteLine("Table Logs already existed.");
-            }
-            m_dbConnection.Close();
         }
         
         public bool IsDoubleTransID(string transID)
         {
-            try
+            using (SQLiteConnection conn = new SQLiteConnection(conn_string))
             {
-                m_dbConnection.Open();
-                string sql = String.Format("SELECT Count(*) FROM Logs WHERE transactionID = '{0}' and date(transactionDate) = '{1}'", transID, DateTime.Now.ToString("yyyy-MM-dd"));
-                SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
-                command.CommandType = System.Data.CommandType.Text;
-                SQLiteDataReader reader = command.ExecuteReader();
+                conn.Open();
                 int result = 0;
-                while (reader.Read())
+                try
                 {
-                    result = Int32.Parse(reader[0].ToString());
+                    string sql = String.Format("SELECT Count(*) FROM Logs WHERE transactionID = '{0}' and date(transactionDate) = '{1}'", transID, DateTime.Now.ToString("yyyy-MM-dd"));
+                    SQLiteCommand command = new SQLiteCommand(sql, conn);
+                    command.CommandType = System.Data.CommandType.Text;
+                    SQLiteDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        result = Int32.Parse(reader[0].ToString());
+                    }
                 }
                 //Console.WriteLine(result);
-
+                catch (Exception ex)
+                {
+                    Console.WriteLine("IsDouble Error: " + ex);
+                }
                 if (result > 1)
                 {
                     return true;
                 }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("IsDouble Error: " + ex);
-            }
-            finally
-            {
-                m_dbConnection.Close();
             }
             return false;
         }
 
         public void AddLog(string transID, string transDate)
         {
-            try
+            using (SQLiteConnection conn = new SQLiteConnection(conn_string))
             {
-                m_dbConnection.Open();
+                conn.Open();
                 // insert data to table
-                using (SQLiteCommand command = m_dbConnection.CreateCommand())
+                try
                 {
+                    SQLiteCommand command = conn.CreateCommand();
                     command.CommandText = "insert into Logs (transactionID, transactionDate) values (@transID, @transDate);";
                     command.Parameters.AddWithValue("@transID", transID);
                     command.Parameters.AddWithValue("@transDate", transDate);
                     command.ExecuteNonQuery();
                 }
-
-                if (today != DateTime.Today)
+                catch (Exception ex)
                 {
-                    today = DateTime.Today;
-                    DeleteOldLog();
+                    Console.WriteLine("AddLog Error: " + ex);
                 }
             }
-            catch (Exception ex)
+            if (today != DateTime.Today)
             {
-                Console.WriteLine("AddLog Error: " + ex);
-            }
-            finally
-            {
-                m_dbConnection.Close();
+                today = DateTime.Today;
+                DeleteOldLog();
             }
         }
 
         public void SelectLog()
         {
-            try
+            using (SQLiteConnection conn = new SQLiteConnection(conn_string))
             {
-                m_dbConnection.Open();
-                // insert data to table
-                string sql = "SELECT * FROM Logs";
-                SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
-                SQLiteDataReader reader = command.ExecuteReader();
-                string r = "";
-                while (reader.Read())
+                conn.Open();
+                // select data from table
+                try
                 {
-                    r += String.Format("{0}\t{1}\n", reader[0], reader[1]);
+                    string sql = "SELECT * FROM Logs";
+                    SQLiteCommand command = new SQLiteCommand(sql, conn);
+                    SQLiteDataReader reader = command.ExecuteReader();
+                    string r = "";
+                    while (reader.Read())
+                    {
+                        r += String.Format("{0}\t{1}\n", reader[0], reader[1]);
+                    }
+                    Console.WriteLine(r);
                 }
-                Console.WriteLine(r);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-            finally
-            {
-                m_dbConnection.Close();
+                catch (Exception ex)
+                {
+                    Console.WriteLine("SelectLog err: " + ex);
+                }
             }
         }
 
         private void DeleteOldLog()
         {
-            try
+            using (SQLiteConnection conn = new SQLiteConnection(conn_string))
             {
-                //m_dbConnection.Open();    //Connection already opened at func: Add Log
-                using (SQLiteCommand command = m_dbConnection.CreateCommand())
+                conn.Open();
+                try
                 {
+                    SQLiteCommand command = conn.CreateCommand();
                     command.CommandText = "DELETE FROM Logs WHERE date(transactionDate, '+15 day') < @date;";
                     command.Parameters.AddWithValue("@date", today.ToString("yyyy-MM-dd"));
                     command.ExecuteNonQuery();
                 }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("DelLog Err: " + ex);
-            }
-            finally
-            {
-                //m_dbConnection.Close();
+                catch (Exception ex)
+                {
+                    Console.WriteLine("DeleteLog err: " + ex);
+                }
             }
         }
 
         public List<Log> SearchLog(string transID = "###", string tranDate = "###")
         {
             List<Log> res = new List<Log>();
-            try
+            using (SQLiteConnection conn = new SQLiteConnection(conn_string))
             {
-                m_dbConnection.Open();
-                string sql = String.Format("SELECT * FROM Logs WHERE transactionID LIKE '%{0}%' OR transactionDate LIKE '%{1}%'", transID, tranDate);
-                SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
-                SQLiteDataReader reader = command.ExecuteReader();
-                while (reader.Read())
+                conn.Open();
+                try
                 {
-                    Log a = new Log(reader.GetString(0), reader.GetString(1));
-                    res.Add(a);
+                    string sql = String.Format("SELECT * FROM Logs WHERE transactionID LIKE '%{0}%' OR transactionDate LIKE '%{1}%'", transID, tranDate);
+                    SQLiteCommand command = new SQLiteCommand(sql, conn);
+                    SQLiteDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        Log a = new Log(reader.GetString(0), reader.GetString(1));
+                        res.Add(a);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Search Err: " + ex);
                 }
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Search Err: " + ex);
-            }
-            finally
-            {
-                m_dbConnection.Close();
-            }
-
             return res;
         }
     }

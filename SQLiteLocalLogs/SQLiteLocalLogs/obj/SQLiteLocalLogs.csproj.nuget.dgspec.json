@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Code\\dotnet\\SQLiteLocalLogs\\SQLiteLocalLogs\\SQLiteLocalLogs.csproj": {}
+    "D:\\Code\\dotnet\\SQLiteLocalLogs\\SQLiteLocalLogs\\SQLiteLocalLogs.csproj": {}
   },
   "projects": {
-    "E:\\Code\\dotnet\\SQLiteLocalLogs\\SQLiteLocalLogs\\SQLiteLocalLogs.csproj": {
+    "D:\\Code\\dotnet\\SQLiteLocalLogs\\SQLiteLocalLogs\\SQLiteLocalLogs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Code\\dotnet\\SQLiteLocalLogs\\SQLiteLocalLogs\\SQLiteLocalLogs.csproj",
+        "projectUniqueName": "D:\\Code\\dotnet\\SQLiteLocalLogs\\SQLiteLocalLogs\\SQLiteLocalLogs.csproj",
         "projectName": "SQLiteLocalLogs",
-        "projectPath": "E:\\Code\\dotnet\\SQLiteLocalLogs\\SQLiteLocalLogs\\SQLiteLocalLogs.csproj",
+        "projectPath": "D:\\Code\\dotnet\\SQLiteLocalLogs\\SQLiteLocalLogs\\SQLiteLocalLogs.csproj",
         "packagesPath": "C:\\Users\\Phong\\.nuget\\packages\\",
-        "outputPath": "E:\\Code\\dotnet\\SQLiteLocalLogs\\SQLiteLocalLogs\\obj\\",
+        "outputPath": "D:\\Code\\dotnet\\SQLiteLocalLogs\\SQLiteLocalLogs\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Phong\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -60,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
