@@ -20,7 +20,7 @@ namespace ServerDauGia.DAO
                 conn = new MySqlConnection(connStr);
                 conn.Open();
                 MySqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "select * from users where username = '"+username+"';";
+                cmd.CommandText = "select * from daugia.users where username = '"+username+"';";
                 MySqlDataReader dr = cmd.ExecuteReader();
                 if (!dr.HasRows)
                 {
@@ -32,7 +32,7 @@ namespace ServerDauGia.DAO
                     {
                         string hpass = dr.GetString("hashpass");
                         int balance = Int32.Parse(dr.GetString("balance"));
-                        bool block = dr.GetBoolean("hashpass");
+                        bool block = dr.GetBoolean("lock");
                         user = new User(username, hpass, balance, block);
                     }
                 }
@@ -44,7 +44,9 @@ namespace ServerDauGia.DAO
             finally
             {
                 if (conn != null)
+                {
                     conn.Close();
+                }
             }
             return user;
         }
@@ -57,11 +59,12 @@ namespace ServerDauGia.DAO
                 conn = new MySqlConnection(connStr);
                 conn.Open();
                 MySqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@$"insert into users(username, password, balance, lock) 
+                cmd.CommandText = String.Format(@$"insert into daugia.users(username, password, balance, lock) 
                                             values ('{user.username}', '{user.hashpass}', {user.block},
                                                     {user.block});");
                 cmd.ExecuteNonQuery();
                 res = "00";
+                Console.WriteLine("User add succeed");
             }
             catch (Exception ex)
             {
@@ -72,7 +75,6 @@ namespace ServerDauGia.DAO
                 if (conn != null)
                     conn.Close();
             }
-            Console.WriteLine("User add succeed");
             return res;
         }
 
@@ -84,14 +86,14 @@ namespace ServerDauGia.DAO
                 conn = new MySqlConnection(connStr);
                 conn.Open();
                 MySqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@$"update users set {column}={data} 
+                cmd.CommandText = String.Format(@$"update daugia.users set {column}={data} 
                                                 where username = '{username}';");
                 cmd.ExecuteNonQuery();
                 res = "00";
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Err Change User Block Status: " + ex);
+                Console.WriteLine("Err update User: " + ex);
             }
             finally
             {
@@ -109,12 +111,13 @@ namespace ServerDauGia.DAO
                 conn = new MySqlConnection(connStr);
                 conn.Open();
                 MySqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@$"insert into products(name, org_price, final_price, sold
-                                                    username, sold_time) 
-                                                values ('{prod.name}', {prod.org_price}, {prod.final_price},
-                                                    {prod.sold}, '{prod.username}', '{prod.sold_time}');");
+                cmd.CommandText = String.Format(@$"insert into daugia.products(name, org_price, final_price,
+                                                    sold, username, sold_time) 
+                                                value ('{prod.name}', {prod.org_price}, null,
+                                                    false, null, null);");
                 cmd.ExecuteNonQuery();
                 res = "00";
+                Console.WriteLine("Insert Product succeed");
             }
             catch (Exception ex)
             {
@@ -125,7 +128,6 @@ namespace ServerDauGia.DAO
                 if (conn != null)
                     conn.Close();
             }
-            Console.WriteLine("Insert Product succeed");
             return res;
         }
 
@@ -137,7 +139,7 @@ namespace ServerDauGia.DAO
                 conn = new MySqlConnection(connStr);
                 conn.Open();
                 MySqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@$"update products set name = '{prod.name}', 
+                cmd.CommandText = String.Format(@$"update daugia.products set name = '{prod.name}', 
                                                     org_price = {prod.org_price}, 
                                                     final_price = {prod.final_price},
                                                     sold = {prod.sold}, username = '{prod.username}', 
@@ -155,7 +157,6 @@ namespace ServerDauGia.DAO
                 if (conn != null)
                     conn.Close();
             }
-
             return res;
         }
 
@@ -167,7 +168,7 @@ namespace ServerDauGia.DAO
                 conn = new MySqlConnection(connStr);
                 conn.Open();
                 MySqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@$"SELECT * FROM products
+                cmd.CommandText = String.Format(@$"SELECT * FROM daugia.products
                                                     ORDER BY RAND() LIMIT 1;");
                 MySqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
@@ -175,10 +176,16 @@ namespace ServerDauGia.DAO
                     int id = Int32.Parse(dr.GetString("id"));
                     string name = dr.GetString("name");
                     int org_price = Int32.Parse(dr.GetString("org_price"));
-                    int final_price = Int32.Parse(dr.GetString("final_price"));
+                    int final_price = 0;
+                    if  (!dr.IsDBNull(3))
+                        final_price = Int32.Parse(dr.GetString("final_price"));
                     bool sold = dr.GetBoolean("sold");
-                    string username = dr.GetString("username");
-                    DateTime sold_time = DateTime.Parse(dr.GetString("soldtime"));
+                    string username = null;
+                    if (!dr.IsDBNull(5))
+                        username = dr.GetString("username");
+                    DateTime sold_time = DateTime.Now;
+                    if (!dr.IsDBNull(6))
+                        sold_time= DateTime.Parse(dr.GetString("sold_time"));
 
                     prod = new Product(id, name, org_price, final_price, sold, username, sold_time);
                 }

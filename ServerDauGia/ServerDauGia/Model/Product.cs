@@ -6,13 +6,15 @@ namespace ServerDauGia.Model
 {
     public class Product
     {
-        public int id{ get; set; }
-        public string name  { get; set; }
+        public int id { get; set; }
+        public string name { get; set; } = null;
         public int org_price { get; set; }
         public int final_price { get; set; }
-        public string username { get; set; }
+        public string username { get; set; } = null;
         public DateTime sold_time { get; set; }
         public bool sold { get; set; } = false;
+
+        public Product() { }
 
         public Product(int id, string name, int org_price, int final_price, bool sold, 
                         string username, DateTime sold_time)

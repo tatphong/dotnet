@@ -6,8 +6,8 @@ namespace ServerDauGia.Model
 {
     public class User
     {
-        public string username { get; set; }
-        public string hashpass { get; set; }
+        public string username { get; set; } = null;
+        public string hashpass { get; set; } = null;
         public int balance { get; set; }
         public bool block { get; set; }
 

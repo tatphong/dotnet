@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SVs4kdqrJF6vXCjs5HcZEK4/HoHET3VxynGaGW5kBXYUjZ6ZCDesxbTKg1X0H7+ZozReb2EeqtZCVNJbArH1Bg==",
+  "dgSpecHash": "3Atw22e0XmLbVECFDV9f9/96/4MTD0Pk5U1xCOmhY+Tq03AGSEJcXp1xO7+cHg95B2IblHkgyp+QpO6okz2v9A==",
   "success": true,
-  "projectFilePath": "E:\\Code\\dotnet\\DauGia\\DauGia\\DauGia.csproj",
+  "projectFilePath": "D:\\Code\\dotnet\\DauGia\\DauGia\\DauGia.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Phong\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\Phong\\.nuget\\packages\\google.protobuf\\3.14.0\\google.protobuf.3.14.0.nupkg.sha512",

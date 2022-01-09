@@ -42,14 +42,16 @@ namespace DauGia
             string res = server.Send(request);
             if (res.Split(";")[0] == "00")
             {
-                label3.Text = "OKE";
                 user.balance = Int32.Parse(res.Split(";")[1]);
                 MainForm main = new MainForm(this.server, user);
                 main.StartPosition = FormStartPosition.CenterScreen;
-                this.Dispose();
+                main.Show();
+                this.Visible = false;
             }
+            else if (res.Split(";")[0] == "01")
+                label3.Text = "Login failed. Check your password";
             else
-                label3.Text = "Đăng nhập thất bại";
+                label3.Text = "Login failed. Your username not exist";
         }
     }
 }

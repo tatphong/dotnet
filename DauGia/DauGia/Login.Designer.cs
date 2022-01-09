@@ -39,9 +39,10 @@ namespace DauGia
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(192, 195);
+            this.button1.Location = new System.Drawing.Point(200, 260);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(134, 31);
             this.button1.TabIndex = 0;
             this.button1.Text = "Đăng nhập";
             this.button1.UseVisualStyleBackColor = true;
@@ -50,55 +51,58 @@ namespace DauGia
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(92, 74);
+            this.label1.Location = new System.Drawing.Point(105, 99);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 15);
+            this.label1.Size = new System.Drawing.Size(75, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Username";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(92, 106);
+            this.label2.Location = new System.Drawing.Point(105, 141);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 15);
+            this.label2.Size = new System.Drawing.Size(70, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Password";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(175, 74);
+            this.textBox1.Location = new System.Drawing.Point(200, 99);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(134, 23);
+            this.textBox1.Size = new System.Drawing.Size(185, 27);
             this.textBox1.TabIndex = 3;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(175, 106);
+            this.textBox2.Location = new System.Drawing.Point(200, 141);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(134, 23);
+            this.textBox2.Size = new System.Drawing.Size(185, 27);
             this.textBox2.TabIndex = 4;
             this.textBox2.UseSystemPasswordChar = true;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(212, 163);
+            this.label3.Location = new System.Drawing.Point(200, 205);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 15);
+            this.label3.Size = new System.Drawing.Size(0, 20);
             this.label3.TabIndex = 5;
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(454, 267);
+            this.ClientSize = new System.Drawing.Size(519, 356);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Login";
             this.Text = "Sàn đấu giá - Đăng nhập";
             this.ResumeLayout(false);

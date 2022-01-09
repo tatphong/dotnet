@@ -22,23 +22,24 @@ namespace DauGia
             InitializeComponent();
             lblUsername.Text = user.username;
             lblBalance.Text = user.balance.ToString();
-            Task.Run(getUpdateProduct);
+            Task update = new Task(() => getUpdateProduct());
+            update.Start();
         }
 
         private async Task getUpdateProduct()
         {
             while (true)
             {
-                string res = server.Send("check");
+                string res = server.Send("check;" + user.username);
                 string[] data = res.Split(";");
                 if (data.Length == 1)
                     txtConsole.Text += "New bid for " + prod.name + " is set.\n";
-                else
+                else if (!string.IsNullOrEmpty(data[0]))
                 {
                     txtConsole.Text += "Winner for " + prod.name + " is: " + data[0] + ". Final bid: " + data[1] + "\n";
                     if (data[0] == user.username)
                     {
-                        txtConsole.Text += "Chúc mừng bạn đã chiến thắng sản phẩm: " + prod.name + ".\n";
+                        txtConsole.Text += "Congratulation. You are winner for: " + prod.name + ".\n";
                         this.user.balance -= Int32.Parse(data[1]);
                     }
                     prod = new Product(data[2], Int32.Parse(data[3]));
@@ -46,7 +47,15 @@ namespace DauGia
                     lblProdName.Text = prod.name;
                     lblProdPrice.Text = prod.org_price.ToString();
                 }
-                await Task.Delay(1000);
+                else 
+                {
+                    txtConsole.Text += "Last product have not been sold.\n";
+                    prod = new Product(data[2], Int32.Parse(data[3]));
+                    txtConsole.Text += "New product has been put.\n";
+                    lblProdName.Text = prod.name;
+                    lblProdPrice.Text = prod.org_price.ToString();
+                }
+                await Task.Delay(500);
             }
         }
 
@@ -60,22 +69,22 @@ namespace DauGia
         {
             if (Int32.Parse(txtBetPrice.Text) <= prod.org_price)
             {
-                txtConsole.Text += "Giá bid không hợp lệ.\n";
+                txtConsole.Text += "Your bid not valid.\n";
                 return;
             }
             string request = $"bet;{user.username};{txtBetPrice}";
             string resCode = server.Send(request);
             string resConsole = "";
             if (resCode == "00")
-                resConsole = "Bạn đã đặt thành công mức bid cao nhất.";
+                resConsole = "Successful put highest bid.";
             else if (resCode == "01")
-                resConsole = "Mức bid của bạn chưa phải cao nhất.";
+                resConsole = "Your bid still lower.";
             else if (resCode == "51")
-                resConsole = "Không đủ số dư.";
+                resConsole = "Invalid balance.";
             else if (resCode == "98")
-                resConsole = "Lỗi cơ sở dữ liệu";
+                resConsole = "Database error";
             else
-                resConsole = "Lỗi không xác định.";
+                resConsole = "Unidentify error.";
             txtConsole.Text += resConsole+"\n";
         }
 

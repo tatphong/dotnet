@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Code\\dotnet\\ServerDauGia\\ServerDauGia\\ServerDauGia.csproj": {}
+    "D:\\Code\\dotnet\\ServerDauGia\\ServerDauGia\\ServerDauGia.csproj": {}
   },
   "projects": {
-    "E:\\Code\\dotnet\\ServerDauGia\\ServerDauGia\\ServerDauGia.csproj": {
+    "D:\\Code\\dotnet\\ServerDauGia\\ServerDauGia\\ServerDauGia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Code\\dotnet\\ServerDauGia\\ServerDauGia\\ServerDauGia.csproj",
+        "projectUniqueName": "D:\\Code\\dotnet\\ServerDauGia\\ServerDauGia\\ServerDauGia.csproj",
         "projectName": "ServerDauGia",
-        "projectPath": "E:\\Code\\dotnet\\ServerDauGia\\ServerDauGia\\ServerDauGia.csproj",
+        "projectPath": "D:\\Code\\dotnet\\ServerDauGia\\ServerDauGia\\ServerDauGia.csproj",
         "packagesPath": "C:\\Users\\Phong\\.nuget\\packages\\",
-        "outputPath": "E:\\Code\\dotnet\\ServerDauGia\\ServerDauGia\\obj\\",
+        "outputPath": "D:\\Code\\dotnet\\ServerDauGia\\ServerDauGia\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Phong\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -60,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
