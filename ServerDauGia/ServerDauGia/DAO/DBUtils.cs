@@ -49,8 +49,9 @@ namespace ServerDauGia.DAO
             return user;
         }
 
-        public void addUser(User user)
+        public string addUser(User user)
         {
+            string res = "98";
             try
             {
                 conn = new MySqlConnection(connStr);
@@ -60,6 +61,7 @@ namespace ServerDauGia.DAO
                                             values ('{user.username}', '{user.hashpass}', {user.block},
                                                     {user.block});");
                 cmd.ExecuteNonQuery();
+                res = "00";
             }
             catch (Exception ex)
             {
@@ -71,18 +73,21 @@ namespace ServerDauGia.DAO
                     conn.Close();
             }
             Console.WriteLine("User add succeed");
+            return res;
         }
 
-        public void updateUserBlockState(string username, bool block)
+        public string updateUserData(string username, string column, string data)
         {
+            string res = "98";
             try
             {
                 conn = new MySqlConnection(connStr);
                 conn.Open();
                 MySqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@$"update users set lock={block} 
+                cmd.CommandText = String.Format(@$"update users set {column}={data} 
                                                 where username = '{username}';");
                 cmd.ExecuteNonQuery();
+                res = "00";
             }
             catch (Exception ex)
             {
@@ -93,11 +98,12 @@ namespace ServerDauGia.DAO
                 if (conn != null)
                     conn.Close();
             }
-            Console.WriteLine(username+" is "+ (block?"locked":"unlocked"));
+            return res;
         }
 
-        public void InsertProduct(Product prod)
+        public string InsertProduct(Product prod)
         {
+            string res = "98";
             try
             {
                 conn = new MySqlConnection(connStr);
@@ -108,6 +114,7 @@ namespace ServerDauGia.DAO
                                                 values ('{prod.name}', {prod.org_price}, {prod.final_price},
                                                     {prod.sold}, '{prod.username}', '{prod.sold_time}');");
                 cmd.ExecuteNonQuery();
+                res = "00";
             }
             catch (Exception ex)
             {
@@ -119,10 +126,12 @@ namespace ServerDauGia.DAO
                     conn.Close();
             }
             Console.WriteLine("Insert Product succeed");
+            return res;
         }
 
-        public void UpdateProduct(Product prod)
+        public string UpdateProduct(Product prod)
         {
+            string res = "98";
             try
             {
                 conn = new MySqlConnection(connStr);
@@ -135,6 +144,7 @@ namespace ServerDauGia.DAO
                                                     sold_time = '{prod.sold_time}'
                                                 where id = {prod.id};");
                 cmd.ExecuteNonQuery();
+                res = "00";
             }
             catch (Exception ex)
             {
@@ -145,7 +155,8 @@ namespace ServerDauGia.DAO
                 if (conn != null)
                     conn.Close();
             }
-            Console.WriteLine("UpdateProd succeed");
+
+            return res;
         }
 
         public Product GetNewRandProduct()

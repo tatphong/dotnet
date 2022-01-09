@@ -14,10 +14,12 @@ namespace DauGia
         [STAThread]
         static void Main()
         {
+            ServerConnection server = new ServerConnection();
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Login(server));
+            server.closeConnection();
         }
     }
 }

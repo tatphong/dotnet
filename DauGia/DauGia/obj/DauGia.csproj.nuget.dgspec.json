@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Code\\dotnet\\DauGia\\DauGia\\DauGia.csproj": {}
+    "E:\\Code\\dotnet\\DauGia\\DauGia\\DauGia.csproj": {}
   },
   "projects": {
-    "D:\\Code\\dotnet\\DauGia\\DauGia\\DauGia.csproj": {
+    "E:\\Code\\dotnet\\DauGia\\DauGia\\DauGia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Code\\dotnet\\DauGia\\DauGia\\DauGia.csproj",
+        "projectUniqueName": "E:\\Code\\dotnet\\DauGia\\DauGia\\DauGia.csproj",
         "projectName": "DauGia",
-        "projectPath": "D:\\Code\\dotnet\\DauGia\\DauGia\\DauGia.csproj",
+        "projectPath": "E:\\Code\\dotnet\\DauGia\\DauGia\\DauGia.csproj",
         "packagesPath": "C:\\Users\\Phong\\.nuget\\packages\\",
-        "outputPath": "D:\\Code\\dotnet\\DauGia\\DauGia\\obj\\",
+        "outputPath": "E:\\Code\\dotnet\\DauGia\\DauGia\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Phong\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -63,7 +63,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
