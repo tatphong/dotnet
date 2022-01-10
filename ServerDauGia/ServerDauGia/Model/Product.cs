@@ -7,10 +7,10 @@ namespace ServerDauGia.Model
     public class Product
     {
         public int id { get; set; }
-        public string name { get; set; } = null;
+        public string name { get; set; } = string.Empty;
         public int org_price { get; set; }
         public int final_price { get; set; }
-        public string username { get; set; } = null;
+        public string username { get; set; } = string.Empty;
         public DateTime sold_time { get; set; }
         public bool sold { get; set; } = false;
 

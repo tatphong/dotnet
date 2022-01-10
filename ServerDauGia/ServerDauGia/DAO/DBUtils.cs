@@ -143,7 +143,7 @@ namespace ServerDauGia.DAO
                                                     org_price = {prod.org_price}, 
                                                     final_price = {prod.final_price},
                                                     sold = {prod.sold}, username = '{prod.username}', 
-                                                    sold_time = '{prod.sold_time}'
+                                                    sold_time = '{prod.sold_time.ToString("yyyy-MM-dd HH:mm:ss")}'
                                                 where id = {prod.id};");
                 cmd.ExecuteNonQuery();
                 res = "00";

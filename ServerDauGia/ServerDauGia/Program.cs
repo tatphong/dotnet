@@ -14,7 +14,6 @@ namespace ServerDauGia
     {
         private const int BUFFER_SIZE = 1024;
         private const int PORT_NUMBER = 1234;
-        static DBUtils db = new DBUtils();
         static Product currentProd { get; set; } = new Product();
         Dictionary<string, string> data = new Dictionary<string, string>();
 
@@ -60,18 +59,18 @@ namespace ServerDauGia
                 //trừ tiền và mở khoá cho người thắng
                 if (!string.IsNullOrEmpty(currentProd.username))
                 {
-                    User user = db.GetUserData(currentProd.username);
-                    db.updateUserData(user.username, "lock", "0");
+                    User user = new DBUtils().GetUserData(currentProd.username);
+                    new DBUtils().updateUserData(user.username, "users.lock", "0");
                     int new_balance = user.balance - currentProd.final_price;
-                    db.updateUserData(user.username, "balance", new_balance.ToString());
+                    new DBUtils().updateUserData(user.username, "balance", new_balance.ToString());
 
                     currentProd.sold = true;
                     currentProd.sold_time = DateTime.Now;
-                    db.UpdateProduct(currentProd);
+                    new DBUtils().UpdateProduct(currentProd);
                     Console.WriteLine("New product is put on floor.");
                 }
                 //lấy sản phẩm mới
-                currentProd = db.GetNewRandProduct();
+                currentProd = new DBUtils().GetNewRandProduct();
 
                 while (DateTime.Now.Minute == now)
                 {
@@ -84,7 +83,7 @@ namespace ServerDauGia
         {
             string res = "99";
             string[] input_data = input.Split(";");    //format: cmd;username;data
-            User user = db.GetUserData(input_data[1]);
+            User user = new DBUtils().GetUserData(input_data[1]);
 
             switch (input_data[0])
             {
@@ -98,13 +97,13 @@ namespace ServerDauGia
                         return "01";
 
                     //mở khoá tài khoản trước đó đã bet
-                    db.updateUserData(currentProd.username, "lock", "0");
+                    new DBUtils().updateUserData(currentProd.username, "users.lock", "0");
                     //cập nhật dữ liệu
                     currentProd.final_price = price;
                     currentProd.username = user.username;
-                    db.UpdateProduct(currentProd);
+                    new DBUtils().UpdateProduct(currentProd);
                     //khoá tài khoản
-                    res = db.updateUserData(currentProd.username, "lock", "1");
+                    res = new DBUtils().updateUserData(currentProd.username, "users.lock", "1");
                     break;
                 case "authenticate":
                     if (string.IsNullOrEmpty(user.username))
@@ -115,13 +114,13 @@ namespace ServerDauGia
                         res = "01";
                     break;
                 case "check":
-                    if (prod.id != currentProd.id)
+                    if (currentProd!=null && prod.id != currentProd.id)
                     {
                         res = prod.username + ";" + prod.final_price + ";" + currentProd.name + ";" + currentProd.org_price;
                         prod = currentProd;
                     }
 
-                    if (prod.final_price != currentProd.final_price)
+                    if (currentProd!=null && prod.final_price != currentProd.final_price)
                     {
                         prod = currentProd;
                         res = prod.final_price.ToString();
@@ -129,11 +128,11 @@ namespace ServerDauGia
                     break;
                 case "insertuser":
                     User new_user = new User(input_data[1], create_md5(input_data[2]).ToLower(), Int32.Parse(input_data[3]), false);
-                    res = db.addUser(new_user);
+                    res = new DBUtils().addUser(new_user);
                     break;
                 case "insertproduct":
                     Product new_prod = new Product(input_data[1], Int32.Parse(input_data[2]));
-                    res = db.InsertProduct(new_prod);
+                    res = new DBUtils().InsertProduct(new_prod);
                     break;
                 default:
                     break;

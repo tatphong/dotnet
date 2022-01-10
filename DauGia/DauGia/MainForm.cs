@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,6 +15,7 @@ namespace DauGia
         ServerConnection server;
         User user { get; set; }
         Product prod { get; set; }
+        Task update;
 
         public MainForm(ServerConnection server, User user)
         {
@@ -22,8 +24,22 @@ namespace DauGia
             InitializeComponent();
             lblUsername.Text = user.username;
             lblBalance.Text = user.balance.ToString();
-            Task update = new Task(() => getUpdateProduct());
+            update = new Task(() => getUpdateProduct());
             update.Start();
+        }
+
+        public void SetConsoleText(TextBox txtbox, string text)
+        {
+            this.Invoke(new MethodInvoker(delegate () {
+                txtbox.AppendText(text);
+                txtbox.AppendText(Environment.NewLine);
+            }));
+        }
+        public void SetLabelText(Label lbl, string text)
+        {
+            this.Invoke(new MethodInvoker(delegate () {
+                lbl.Text = text;
+            }));
         }
 
         private async Task getUpdateProduct()
@@ -32,30 +48,34 @@ namespace DauGia
             {
                 string res = server.Send("check;" + user.username);
                 string[] data = res.Split(";");
-                if (data.Length == 1)
-                    txtConsole.Text += "New bid for " + prod.name + " is set.\n";
+                if (res.Split("\0")[0] == "99")
+                    continue;
+                else if (data.Length == 1)
+                    SetConsoleText(txtConsole, "New bid for " + prod.name + " is set.");
                 else if (!string.IsNullOrEmpty(data[0]))
                 {
-                    txtConsole.Text += "Winner for " + prod.name + " is: " + data[0] + ". Final bid: " + data[1] + "\n";
+                    SetConsoleText(txtConsole, "Winner for " + prod.name + " is: " + data[0] + ". Final bid: " + data[1]);
                     if (data[0] == user.username)
                     {
-                        txtConsole.Text += "Congratulation. You are winner for: " + prod.name + ".\n";
+                        SetConsoleText(txtConsole, "Congratulation. You are winner for: " + prod.name);
                         this.user.balance -= Int32.Parse(data[1]);
                     }
+
                     prod = new Product(data[2], Int32.Parse(data[3]));
-                    txtConsole.Text += "New product has been put.\n";
-                    lblProdName.Text = prod.name;
-                    lblProdPrice.Text = prod.org_price.ToString();
+                    SetConsoleText(txtConsole, "New product has been put.");
+                    SetLabelText(lblProdName, prod.name);
+                    SetLabelText(lblProdPrice, prod.org_price.ToString());
                 }
-                else 
+                else
                 {
-                    txtConsole.Text += "Last product have not been sold.\n";
+                    SetConsoleText(txtConsole, "Last product have not been sold.");
                     prod = new Product(data[2], Int32.Parse(data[3]));
-                    txtConsole.Text += "New product has been put.\n";
-                    lblProdName.Text = prod.name;
-                    lblProdPrice.Text = prod.org_price.ToString();
+                    SetConsoleText(txtConsole, "New product has been put.");
+                    SetLabelText(lblProdName, prod.name);
+                    SetLabelText(lblProdPrice, prod.org_price.ToString());
                 }
-                await Task.Delay(500);
+                //await Task.Delay(5000);
+                Thread.Sleep(2000);
             }
         }
 
@@ -67,14 +87,19 @@ namespace DauGia
 
         private void btnBet_Click(object sender, EventArgs e)
         {
-            if (Int32.Parse(txtBetPrice.Text) <= prod.org_price)
+            if (Int64.Parse(txtBetPrice.Text) >= user.balance)
             {
-                txtConsole.Text += "Your bid not valid.\n";
+                SetConsoleText(txtConsole, "Your balance not enough.");
                 return;
             }
-            string request = $"bet;{user.username};{txtBetPrice}";
+            if (Int32.Parse(txtBetPrice.Text) <= prod.org_price)
+            {
+                SetConsoleText(txtConsole, "Your bid not valid.");
+                return;
+            }
+            string request = $"bet;{user.username};{txtBetPrice.Text}";
             string resCode = server.Send(request);
-            string resConsole = "";
+            string resConsole;
             if (resCode == "00")
                 resConsole = "Successful put highest bid.";
             else if (resCode == "01")
@@ -85,7 +110,8 @@ namespace DauGia
                 resConsole = "Database error";
             else
                 resConsole = "Unidentify error.";
-            txtConsole.Text += resConsole+"\n";
+
+            SetConsoleText(txtConsole, resConsole);
         }
 
         private void txtBetPrice_KeyPress(object sender, KeyPressEventArgs e)
