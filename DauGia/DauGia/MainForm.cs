@@ -98,7 +98,7 @@ namespace DauGia
                 return;
             }
             string request = $"bet;{user.username};{txtBetPrice.Text}";
-            string resCode = server.Send(request);
+            string resCode = server.Send(request).Substring(0,2);
             string resConsole;
             if (resCode == "00")
                 resConsole = "Successful put highest bid.";

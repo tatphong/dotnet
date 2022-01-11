@@ -168,7 +168,7 @@ namespace ServerDauGia.DAO
                 conn = new MySqlConnection(connStr);
                 conn.Open();
                 MySqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@$"SELECT * FROM daugia.products
+                cmd.CommandText = String.Format(@$"SELECT * FROM daugia.products where sold = false 
                                                     ORDER BY RAND() LIMIT 1;");
                 MySqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())

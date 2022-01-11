@@ -57,7 +57,7 @@ namespace ServerDauGia
             {
                 int now = DateTime.Now.Minute;
                 //trừ tiền và mở khoá cho người thắng
-                if (!string.IsNullOrEmpty(currentProd.username))
+                if (currentProd!=null && !string.IsNullOrEmpty(currentProd.username))
                 {
                     User user = new DBUtils().GetUserData(currentProd.username);
                     new DBUtils().updateUserData(user.username, "users.lock", "0");
@@ -178,13 +178,13 @@ namespace ServerDauGia
         {
             Task controller = new Task(() => Autorun());
             Task communicate = new Task(() => ClientCommunicate());
-            //Task console = new Task(() => ConsoleManager());
+            Task console = new Task(() => ConsoleManager());
             controller.Start();
             communicate.Start();
-            //console.Start();
+            console.Start();
             await controller;
             await communicate;
-            //await console;
+            await console;
             //Console.WriteLine(DateTime.Now);
         }
     }
