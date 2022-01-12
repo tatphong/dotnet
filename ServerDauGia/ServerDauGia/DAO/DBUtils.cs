@@ -59,9 +59,8 @@ namespace ServerDauGia.DAO
                 conn = new MySqlConnection(connStr);
                 conn.Open();
                 MySqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@$"insert into daugia.users(username, password, balance, lock) 
-                                            values ('{user.username}', '{user.hashpass}', {user.block},
-                                                    {user.block});");
+                cmd.CommandText = String.Format(@$"insert into daugia.users(username, hashpass, balance) 
+                                            values ('{user.username}', '{user.hashpass}', {user.balance});");
                 cmd.ExecuteNonQuery();
                 res = "00";
                 Console.WriteLine("User add succeed");

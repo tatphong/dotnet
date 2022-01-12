@@ -48,7 +48,7 @@ namespace DauGia
                 main.Show();
                 this.Visible = false;
             }
-            else if (res.Split(";")[0] == "01")
+            else if (res.Substring(0,2) == "01")
                 label3.Text = "Login failed. Check your password";
             else
                 label3.Text = "Login failed. Your username not exist";
