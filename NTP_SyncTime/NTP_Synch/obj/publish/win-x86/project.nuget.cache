@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "dgSpecHash": "T6t3J0c5WVHB4nrUI1hZ0mubjHqFgH7PD4Vw5zOV2tXPHMGUUZBT9N5GG5IKASR83d1Uy3ECOSUr4+vDl4S/Lw==",
+  "success": true,
+  "projectFilePath": "D:\\Code\\SVN_MISC_DEV\\NTP_Synch\\Source\\NTP_Synch\\NTP_Synch.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\phongtat\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\phongtat\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.0\\system.configuration.configurationmanager.6.0.0.nupkg.sha512",
+    "C:\\Users\\phongtat\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
+    "C:\\Users\\phongtat\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\phongtat\\.nuget\\packages\\system.security.accesscontrol\\6.0.0\\system.security.accesscontrol.6.0.0.nupkg.sha512",
+    "C:\\Users\\phongtat\\.nuget\\packages\\system.security.cryptography.protecteddata\\6.0.0\\system.security.cryptography.protecteddata.6.0.0.nupkg.sha512",
+    "C:\\Users\\phongtat\\.nuget\\packages\\system.security.permissions\\6.0.0\\system.security.permissions.6.0.0.nupkg.sha512",
+    "C:\\Users\\phongtat\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
+    "C:\\Users\\phongtat\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
+    "C:\\Users\\phongtat\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\3.1.24\\microsoft.netcore.app.runtime.win-x86.3.1.24.nupkg.sha512",
+    "C:\\Users\\phongtat\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\3.1.24\\microsoft.windowsdesktop.app.runtime.win-x86.3.1.24.nupkg.sha512",
+    "C:\\Users\\phongtat\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\3.1.24\\microsoft.aspnetcore.app.runtime.win-x86.3.1.24.nupkg.sha512",
+    "C:\\Users\\phongtat\\.nuget\\packages\\microsoft.netcore.app.host.win-x86\\3.1.24\\microsoft.netcore.app.host.win-x86.3.1.24.nupkg.sha512"
+  ],
+  "logs": []
+}

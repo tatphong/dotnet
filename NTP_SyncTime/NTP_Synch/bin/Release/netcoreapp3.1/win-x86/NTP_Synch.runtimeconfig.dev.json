@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\phongtat\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\phongtat\\.nuget\\packages"
+    ]
+  }
+}
