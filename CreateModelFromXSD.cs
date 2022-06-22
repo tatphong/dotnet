@@ -44,7 +44,7 @@ namespace ConsoleXML
                 }
             }
         }
-        public static void OldMian(){
+        public static void OldMain(){
             // C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools>xsd D:\Code\Dotnet\ConsoleXML\shiporder.xsd /classes /outputdir:D:\Code\Dotnet\ConsoleXML\
             //shiporder item = new shiporder();
             string xsdPath = "shiporder.xsd";
