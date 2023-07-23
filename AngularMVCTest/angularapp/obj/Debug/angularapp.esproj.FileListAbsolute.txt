@@ -1,0 +1,2 @@
+E:\Code\dotnet\AngularMVCTest\angularapp\obj\Debug\angularapp.esproj.SuggestedBindingRedirects.cache
+E:\Code\dotnet\AngularMVCTest\angularapp\obj\Debug\angularapp.esproj.CoreCompileInputs.cache

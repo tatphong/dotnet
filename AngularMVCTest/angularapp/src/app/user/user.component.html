@@ -1,0 +1,21 @@
+<form (ngSubmit)="AddUser()">
+  <div class="container">
+    <div class="mb-3">
+      <label for="UserName" class="form-label">UserName</label>
+      <input type="text" class="form-control" id="UserName" name="UserName" [(ngModel)]="this.UserName">
+    </div>
+    <div class="mb-3">
+      <label for="UserID" class="form-label">UserID</label>
+      <input type="text" class="form-control" id="UserID" name="UserID" [(ngModel)]="this.UserID">
+    </div>
+    <div class="mb-3">
+      <label for="Department" class="form-label">Department</label>
+      <input type="text" class="form-control" id="Department" name="Department" [(ngModel)]="this.Department">
+    </div>
+    <div class="mb-3">
+      <label for="Level" class="form-label">Level</label>
+      <input type="number" class="form-control" id="Level" name="Level" [(ngModel)]="this.Level">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
