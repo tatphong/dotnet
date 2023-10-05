@@ -1,0 +1,17 @@
+﻿@page "/Employees"
+
+<PageTitle>List Employees</PageTitle>
+<h3>Employees</h3>
+
+<p>@Employee</p>
+
+<button class="btn btn-primary" @onclick="ChangeEmployee">Click me</button>
+
+@code {
+    private string Employee = "Ellen";
+
+    private void ChangeEmployee()
+    {
+        Employee = "Hallelujah";
+    }
+}
