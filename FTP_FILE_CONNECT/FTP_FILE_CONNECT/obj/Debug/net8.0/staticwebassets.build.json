@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "1Y/wfrzIZ3WzpcvSseXRzXBtOrUuUsJIirzC2x/U9HY=",
+  "Source": "FTP_FILE_CONNECT",
+  "BasePath": "_content/FTP_FILE_CONNECT",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
