@@ -1,0 +1,4 @@
+2025-07-03 15:13:21,141 [6] INFO  WebserviceDemo.DemoService - DemoService started
+2025-07-03 15:13:21,169 [6] INFO  WebserviceDemo.DemoService - Get name: bu
+2025-07-03 15:13:21,178 [6] INFO  WebserviceDemo.DemoService - ProcessHello
+2025-07-03 15:13:21,178 [6] INFO  WebserviceDemo.DemoService - ProcessHello return: Hello bu

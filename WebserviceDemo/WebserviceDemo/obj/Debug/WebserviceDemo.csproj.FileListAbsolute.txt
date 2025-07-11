@@ -117,8 +117,8 @@ E:\Code\dotnet\WebserviceDemo\WebserviceDemo\bin\Microsoft.CodeDom.Providers.Dot
 E:\Code\dotnet\WebserviceDemo\WebserviceDemo\bin\Oracle.ManagedDataAccess.dll
 E:\Code\dotnet\WebserviceDemo\WebserviceDemo\bin\log4net.xml
 E:\Code\dotnet\WebserviceDemo\WebserviceDemo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\Code\dotnet\WebserviceDemo\WebserviceDemo\obj\Debug\WebserviceDemo.csprojAssemblyReference.cache
 E:\Code\dotnet\WebserviceDemo\WebserviceDemo\obj\Debug\WebserviceDemo.csproj.CoreCompileInputs.cache
-E:\Code\dotnet\WebserviceDemo\WebserviceDemo\obj\Debug\WebserviceDemo.csproj.CopyComplete
 E:\Code\dotnet\WebserviceDemo\WebserviceDemo\obj\Debug\WebserviceDemo.dll
 E:\Code\dotnet\WebserviceDemo\WebserviceDemo\obj\Debug\WebserviceDemo.pdb
+E:\Code\dotnet\WebserviceDemo\WebserviceDemo\obj\Debug\WebserviceDemo.csproj.AssemblyReference.cache
+E:\Code\dotnet\WebserviceDemo\WebserviceDemo\obj\Debug\Webservi.0DAB7F9A.Up2Date
